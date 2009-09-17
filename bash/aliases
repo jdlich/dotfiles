@@ -18,6 +18,9 @@ function open() {
 # cd into cindy jo's website and open it in TextMate
 alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
 
-# delete all files in Git
+# aliases for Git
 alias gs='git status'
 alias gd='git ls-files --deleted | xargs git rm'
+function gc() {
+	git commit -a -m $1
+}
