@@ -1,0 +1,11 @@
+# basic shortcuts
+alias la='ls -a'
+alias ll='ls -l'
+alias lf='ls -F'
+
+# 256MB slice from slicehost
+alias tenable='ssh -p 30000 jacob@tenabledesigns.com'
+
+# show and hide hidden files in the Finder
+alias show_hidden_files='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias hide_hidden_files='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'

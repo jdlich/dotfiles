@@ -1,0 +1,4 @@
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export EDITOR="mate -w"
+SSH_ENV="$HOME/.ssh/environment"
+
