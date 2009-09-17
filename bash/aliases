@@ -14,3 +14,6 @@ alias hide_hidden_files='defaults write com.apple.finder AppleShowAllFiles FALSE
 function open() {
 	open -a Firefox $1
 }
+
+# cd into spiritsbycindyjo website and open in TextMate
+alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
