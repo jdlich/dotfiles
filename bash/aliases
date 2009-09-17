@@ -9,3 +9,8 @@ alias tenable='ssh -p 30000 jacob@tenabledesigns.com'
 # show and hide hidden files in the Finder
 alias show_hidden_files='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hide_hidden_files='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
+# open files in Firefox - used when building websites
+function open() {
+	open -a Firefox $1
+}
