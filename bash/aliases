@@ -19,4 +19,4 @@ function open() {
 alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
 
 # delete all files in Git
-alias git delete='git ls-files --deleted | xargs git rm'
+alias gd='git ls-files --deleted | xargs git rm'
