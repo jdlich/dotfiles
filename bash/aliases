@@ -15,5 +15,8 @@ function open() {
 	open -a Firefox $1
 }
 
-# cd into spiritsbycindyjo website and open in TextMate
+# cd into cindy jo's website and open it in TextMate
 alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
+
+# delete all files in Git
+alias git delete='git ls-files --deleted | xargs git rm'
