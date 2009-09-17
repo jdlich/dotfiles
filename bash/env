@@ -1,4 +1,9 @@
+# path set for /usr/local
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+
+# change default text editor to TextMate
 export EDITOR="mate -w"
+
+# not sure what this is :)
 SSH_ENV="$HOME/.ssh/environment"
 
