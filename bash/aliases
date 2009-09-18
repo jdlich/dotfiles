@@ -11,7 +11,7 @@ alias show_hidden_files='defaults write com.apple.finder AppleShowAllFiles TRUE;
 alias hide_hidden_files='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
 # open files in Firefox - used when building websites
-function open() {
+function o() {
 	open -a Firefox $1
 }
 
