@@ -2,7 +2,6 @@
 alias la='ls -a'
 alias ll='ls -l'
 alias lf='ls -F'
-alias ..='cd ..'
 
 # 256MB slice from slicehost
 alias tenable='ssh -p 30000 jacob@tenabledesigns.com'
