@@ -20,4 +20,5 @@ alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; ma
 
 # aliases for Git
 alias gs='git status'
+alias gl='git log'
 alias gd='git ls-files --deleted | xargs git rm'
