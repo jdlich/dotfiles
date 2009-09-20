@@ -11,8 +11,16 @@ alias show_hidden_files='defaults write com.apple.finder AppleShowAllFiles TRUE;
 alias hide_hidden_files='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
 # open files in Firefox - used when building websites
-function o() {
+function o() { 
 	open -a Firefox $1
+}
+
+# look up a word at dictionary.com 'd' => dictionary, 't' => thesaurus
+function d() { 
+	open -a Firefox http://dictionary.reference.com/browse/$1
+}
+function t() { 
+	open -a Firefox http://thesaurus.reference.com/browse/$1
 }
 
 # cd into cindy jo's website and open it in TextMate
