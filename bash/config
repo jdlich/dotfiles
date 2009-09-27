@@ -42,19 +42,6 @@ BWHITE='\e[47m'
 # text reset
 TXTRST='\e[0m'
 
-# get the current git branch
-# http://aaroncrane.co.uk/2009/03/git_branch_prompt/
-function find_git_branch {
-  local dir=. head
-      if [ -f "$dir/.git/HEAD" ]; then
-          head=$(< "$dir/.git/HEAD")
-          if [[ $head == ref:\ refs/heads/* ]]; then
-              git_branch="[${head#*/*/}]"
-          fi
-          return
-      fi
-  git_branch=''
-}
-
-# customized prompt (ex: working/path[branch] $ )
-export PS1="\[$EWHITE\]\w\[$WHITE\]\$git_branch \[$EWHITE\]$\[$GREEN\] "
+# customized prompt
+# http://vc.gerg.ca/hg/vcprompt
+export PS1="\[$EWHITE\]\w\[$WHITE\]\$(vcprompt) \[$EWHITE\]$\[$GREEN\] "
