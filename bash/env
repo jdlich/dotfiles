@@ -7,3 +7,6 @@ export EDITOR="mate -w"
 # not sure what this is :)
 SSH_ENV="$HOME/.ssh/environment"
 
+# allows ruby to automatically load rubygems without having to require it in every script
+export RUBYOPT=rubygems 
+
