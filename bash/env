@@ -1,5 +1,5 @@
 # path set for /usr/local
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$PATH"
 
 # change default text editor to TextMate
 export EDITOR="mate -w"
