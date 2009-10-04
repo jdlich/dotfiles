@@ -37,8 +37,8 @@ function o() {
 
 # look up a word at dictionary.com 'd [word]' => dictionary, 't [word]' => thesaurus
 function d() { 
-	open -a Firefox http://dictionary.reference.com/browse/$1
+	open -a Safari http://dictionary.reference.com/browse/$1
 }
 function t() { 
-	open -a Firefox http://thesaurus.reference.com/browse/$1
+	open -a Safari http://thesaurus.reference.com/browse/$1
 }
