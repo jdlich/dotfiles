@@ -12,7 +12,10 @@ alias ..='cd ..'
 alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
 alias abbadvisors='cd ~/sites/abbadvisors.com; mate .'
 alias kathleeny='cd ~/sites/kathleeny.com; mate .'
-
+alias oj='cd ~/sites/overlandjournal.com; mate .'
+function equipt() {
+	cd ~/documents/projects/equipt/$1
+}
 # 
 #	Git
 #
