@@ -1,5 +1,5 @@
 #
-#	Basic Shortcuts
+#		Basic Shortcuts
 #
 alias la='ls -a'
 alias ll='ls -l'
@@ -7,17 +7,15 @@ alias lf='ls -F'
 alias ..='cd ..'
 
 #
-#	Projects
+#		Projects
 #
 alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
 alias abbadvisors='cd ~/sites/abbadvisors.com; mate .'
 alias kathleeny='cd ~/sites/kathleeny.com; mate .'
 alias oj='cd ~/sites/overlandjournal.com; mate .'
-function equipt() {
-	cd ~/documents/projects/equipt/$1
-}
+
 # 
-#	Git
+#		Git
 #
 alias gs='git status'
 alias ga='git add .'
@@ -27,15 +25,37 @@ alias gl='git log'
 alias gp='git push'
 
 #
-#	Miscellaneous
+# 	Nanoc
+#
+alias nc='nanoc3 compile'
+alias ns='nanoc3 aco'
+function nl() {
+	nanoc3 layout $1
+}
+function ni() {
+	nanoc3 ci $1
+}
+
+#
+#		Miscellaneous
 #
 # show and hide hidden files in the Finder
 alias sf='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hf='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-# open files in Firefox - used when building websites
-function o() { 
-	open -a Firefox $1
+# open HTML files in Firefox
+function ff() { 
+	open -a Firefox $1.html
+}
+
+# open HTML files in Safari
+function s() {
+	open -a Safari $1.html
+}
+
+# open PSD files in photoshop
+function ps() { 
+	open -a Adobe\ Photoshop\ CS4 $1.psd 
 }
 
 # look up a word at dictionary.com 'd [word]' => dictionary, 't [word]' => thesaurus
@@ -45,3 +65,4 @@ function d() {
 function t() { 
 	open -a Safari http://thesaurus.reference.com/browse/$1
 }
+
