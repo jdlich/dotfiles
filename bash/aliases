@@ -6,13 +6,7 @@ alias ll='ls -l'
 alias lf='ls -F'
 alias ..='cd ..'
 
-#
-#		Projects
-#
-alias cindyjo='cd /volumes/western\ digital\ hd/jacob/sites/spiritsbycindyjo; mate .'
-alias abbadvisors='cd ~/sites/abbadvisors.com; mate .'
-alias kathleeny='cd ~/sites/kathleeny.com; mate .'
-alias oj='cd ~/sites/overlandjournal.com; mate .'
+alias dotfiles='cd /usr/local/bin/dotfiles; mate .'
 
 # 
 #		Git
@@ -25,44 +19,27 @@ alias gl='git log'
 alias gp='git push'
 
 #
-# 	Nanoc
-#
-alias nc='nanoc3 compile'
-alias ns='nanoc3 aco'
-function nl() {
-	nanoc3 layout $1
-}
-function ni() {
-	nanoc3 ci $1
-}
-
-#
 #		Miscellaneous
 #
 # show and hide hidden files in the Finder
-alias sf='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
-alias hf='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-# open HTML files in Firefox
-function ff() { 
-	open -a Firefox $1.html
+# enable/disable dashboard
+alias disabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
+alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
+
+# compress javascript using YUI Compressor (compress input_file output_file)
+function compressjs() {
+	java -jar ~/bin/yuicompressor/build/yuicompressor-2.4.2.jar $1 -o $2 --charset utf-8
 }
 
-# open HTML files in Safari
-function s() {
-	open -a Safari $1.html
+# unpack tar file
+function unpack() {
+	tar -xvzf $1
 }
 
-# open PSD files in photoshop
-function ps() { 
-	open -a Adobe\ Photoshop\ CS4 $1.psd 
+# list out tcp connections
+function tcp() {
+	lsof -i tcp:$1
 }
-
-# look up a word at dictionary.com 'd [word]' => dictionary, 't [word]' => thesaurus
-function d() { 
-	open -a Safari http://dictionary.reference.com/browse/$1
-}
-function t() { 
-	open -a Safari http://thesaurus.reference.com/browse/$1
-}
-

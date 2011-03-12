@@ -1,12 +1,20 @@
-# path set for /usr/local
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$PATH"
-
 # change default text editor to TextMate
 export EDITOR="mate -w"
 
+# ant
+export ANT_HOME="/usr/local/bin/apache-ant-1.7.1"
+
+# maven
+export M2_HOME="/usr/local/bin/apache-maven-2.2.1"
+
+# java
+export JAVA_HOME="/Library/Java/Home"
+
 # not sure what this is :)
-SSH_ENV="$HOME/.ssh/environment"
+export SSH_ENV="$HOME/.ssh/environment"
 
 # allows ruby to automatically load rubygems without having to require it in every script
-export RUBYOPT=rubygems 
+export RUBYOPT=rubygems
 
+# path
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$PATH"
