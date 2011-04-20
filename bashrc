@@ -1,4 +1,4 @@
-source '/usr/local/bin/dotfiles/bash/env'
-source '/usr/local/bin/dotfiles/bash/config'
-source '/usr/local/bin/dotfiles/bash/aliases'
-source '/usr/local/bin/dotfiles/bash/completions'
+source ~/Code/dotfiles/bash/env
+source ~/Code/dotfiles/bash/config
+source ~/Code/dotfiles/bash/aliases
+source ~/Code/dotfiles/bash/completions

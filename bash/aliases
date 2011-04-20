@@ -6,7 +6,7 @@ alias ll='ls -l'
 alias lf='ls -F'
 alias ..='cd ..'
 
-alias dotfiles='cd /usr/local/bin/dotfiles; mate .'
+alias dotfiles='cd ~/Code/dotfiles; mate .'
 
 # 
 #		Git

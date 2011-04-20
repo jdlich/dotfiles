@@ -44,4 +44,4 @@ TXTRST='\e[0m'
 
 # customized prompt
 # http://vc.gerg.ca/hg/vcprompt
-export PS1="\[$EWHITE\]\w\[$WHITE\]\$(vcprompt) \[$EWHITE\]$\[$GREEN\] "
+export PS1="\[$EWHITE\]\w\$(vcprompt)$ \[$TXTRST\]"
