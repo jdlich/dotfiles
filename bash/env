@@ -5,7 +5,7 @@ export EDITOR="mate -w"
 export ANT_HOME="/usr/local/bin/apache-ant-1.7.1"
 
 # maven
-export M2_HOME="/usr/local/bin/apache-maven-2.2.1"
+export M2_HOME="/usr/local/bin/apache-maven-3.0.3"
 
 # java
 export JAVA_HOME="/Library/Java/Home"
