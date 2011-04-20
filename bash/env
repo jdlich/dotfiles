@@ -9,6 +9,8 @@ export M2_HOME="/usr/local/bin/apache-maven-2.2.1"
 
 # java
 export JAVA_HOME="/Library/Java/Home"
+export CLASSPATH="/Library/Java/Extensions/pg73jdbc2ee.jar:."
+export JAVA_OPTS="-XX:MaxPermSize=2048m -Xms128m -Xmx2048m"
 
 # not sure what this is :)
 export SSH_ENV="$HOME/.ssh/environment"
@@ -17,8 +19,8 @@ export SSH_ENV="$HOME/.ssh/environment"
 export RUBYOPT=rubygems
 
 # path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:/usr/local/bin/psql:$PATH"
 
 # customized prompt
 # http://vc.gerg.ca/hg/vcprompt
-export PS1="\[\033[1;37m\]\w\$(vcprompt)$ \[\033[0m\]"
+export PS1="\[\033[1;37m\]\w \$(vcprompt)$ \[\033[0m\]"
