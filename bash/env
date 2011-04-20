@@ -18,3 +18,7 @@ export RUBYOPT=rubygems
 
 # path
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$PATH"
+
+# customized prompt
+# http://vc.gerg.ca/hg/vcprompt
+export PS1="\[$EWHITE\]\w\$(vcprompt)$ \[$TXTRST\]"
