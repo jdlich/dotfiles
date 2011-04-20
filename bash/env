@@ -21,4 +21,4 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Develope
 
 # customized prompt
 # http://vc.gerg.ca/hg/vcprompt
-export PS1="\[$EWHITE\]\w\$(vcprompt)$ \[$TXTRST\]"
+export PS1="\[\033[1;37m\]\w\$(vcprompt)$ \[\033[0m\]"
