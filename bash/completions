@@ -1,1 +1,1 @@
-complete -C /usr/local/bin/dotfiles/scripts/rake_completion -o default rake
+complete -C $DOTFILES/scripts/rake_completion -o default rake

@@ -1,3 +1,3 @@
-source ~/Code/dotfiles/bash/env
-source ~/Code/dotfiles/bash/aliases
-source ~/Code/dotfiles/bash/completions
+source $DOTFILES/bash/env
+source $DOTFILES/bash/aliases
+source $DOTFILES/bash/completions
