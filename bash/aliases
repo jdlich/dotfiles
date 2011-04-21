@@ -29,11 +29,6 @@ alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE; 
 alias disabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 
-# compress javascript using YUI Compressor (compress input_file output_file)
-function compressjs() {
-	java -jar ~/bin/yuicompressor/build/yuicompressor-2.4.2.jar $1 -o $2 --charset utf-8
-}
-
 # unpack tar file
 function unpack() {
 	tar -xvzf $1
