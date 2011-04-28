@@ -29,6 +29,11 @@ alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE; 
 alias disabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 
+# create and open a file in textmate
+function create() {
+	touch $1; mate $1
+}
+
 # unpack tar file
 function unpack() {
 	tar -xvzf $1
