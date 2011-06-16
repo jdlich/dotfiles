@@ -29,8 +29,13 @@ alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE; 
 alias disabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 
+# Interactive JavaScript via Rhino http://www.mozilla.org/rhino/
+function irjs() {
+	java org.mozilla.javascript.tools.shell.Main $1
+}
+
 # create and open a file in textmate
-function create() {
+function newfile() {
 	touch $1; mate $1
 }
 
