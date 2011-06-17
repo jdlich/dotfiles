@@ -6,7 +6,7 @@ alias ll='ls -l'
 alias lf='ls -F'
 alias ..='cd ..'
 
-alias dotfiles='cd ~/Code/dotfiles; mate .'
+alias dotfiles='cd ${DOTFILES}; mate .'
 
 # 
 #		Git
@@ -30,9 +30,7 @@ alias disabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean
 alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 
 # Interactive JavaScript via Rhino http://www.mozilla.org/rhino/
-function irjs() {
-	java org.mozilla.javascript.tools.shell.Main $1
-}
+function rhino() { java org.mozilla.javascript.tools.shell.Main $1 $2; }
 
 # create and open a file in textmate
 function newfile() {

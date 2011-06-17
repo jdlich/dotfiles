@@ -1,29 +1,29 @@
-# change default text editor to TextMate
+# Change default text editor to TextMate
 export EDITOR="mate -w"
 
-# ant
+# Ant
 export ANT_HOME="/usr/local/bin/apache-ant-1.7.1"
 
-# maven
+# Maven
 export M2_HOME="/usr/local/bin/apache-maven-3.0.3"
 
-# java
+# Java
 export JAVA_HOME="/Library/Java/Home"
 export CLASSPATH="/Library/Java/Extensions/pg73jdbc2ee.jar:."
 export JAVA_OPTS="-XX:MaxPermSize=2048m -Xms128m -Xmx2048m"
 
-# not sure what this is :)
+# Not sure what this is, so if you do please fill me in :)
 export SSH_ENV="$HOME/.ssh/environment"
 
-# allows ruby to automatically load rubygems without having to require it in every script
+# Load rubygems without requiring it in every script
 export RUBYOPT=rubygems
 
-# path
+# Path
 export PATH="/usr/local/Cellar/ruby/1.9.2-p180/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$PATH"
 
-# customized prompt
+# Customized prompt
 # http://vc.gerg.ca/hg/vcprompt
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
 
-# This loads RVM into a shell session
+# Loads RVM into a shell session
 [[ -s "/Users/Jacob/.rvm/scripts/rvm" ]] && source "/Users/Jacob/.rvm/scripts/rvm"  

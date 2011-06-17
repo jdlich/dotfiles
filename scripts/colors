@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#!/usr/bin/env ruby
 
 # Prints ANSI escape sequence colors to the screen
 # http://kpumuk.info/ruby-on-rails/colorizing-console-ruby-script-output/
