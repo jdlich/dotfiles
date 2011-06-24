@@ -33,16 +33,13 @@ alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean 
 function rhino() { java org.mozilla.javascript.tools.shell.Main $1 $2; }
 
 # create and open a file in textmate
-function newfile() {
-	touch $1; mate $1
-}
+function newfile() { touch $1; mate $1; }
 
 # unpack tar file
-function unpack() {
-	tar -xvzf $1
-}
+function unpack() { tar -xvzf $1; }
 
 # list out tcp connections
-function tcp() {
-	lsof -i tcp:$1
-}
+function tcp() { lsof -i tcp:$1; }
+
+# find file and open in textmate
+function goto() { find . -name $1 | xargs mate; }
