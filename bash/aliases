@@ -32,7 +32,10 @@ alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean 
 # copy current directory's absolute path to clipboard
 alias cpwd='echo -n `pwd` | pbcopy'
 
-# Interactive JavaScript via Rhino http://www.mozilla.org/rhino/
+# open files with iA Writer
+function writer() { open -a "iA Writer" $1; }
+
+# interactive JavaScript via Rhino http://www.mozilla.org/rhino/
 function rhino() { java org.mozilla.javascript.tools.shell.Main $1 $2; }
 
 # create and open a file in textmate
