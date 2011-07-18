@@ -15,9 +15,8 @@ end
 
 desc "Stop, publish and restart tomcat."
 task :restart do
-  Rake.application.invoke_task :stop
-  sleep 1
-  Rake.application.invoke_task :publish
-  sleep 1
-  Rake.application.invoke_task :start
+  %w{ stop publish start }.each do |task|
+    Rake.application.invoke_task(task.to_s)
+    sleep 1
+  end  
 end
