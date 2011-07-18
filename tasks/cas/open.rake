@@ -1,3 +1,6 @@
+desc "Alias for open:webapp"
+task :open => ["open:webapp"]
+
 namespace :open do
   desc "Open Jira ticket if there is one"
   task :jira do
@@ -9,5 +12,10 @@ namespace :open do
       url = "https://issues.jasig.org/browse/CAS-#{jira}"
       system "open -a Firefox #{url}"
     end
+  end
+  
+  desc "Opens webapp directory in textmate."
+  task :webapp do
+    system "mate #{CAS}/cas-server-webapp/src/main/webapp/"
   end
 end
