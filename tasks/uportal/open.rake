@@ -2,7 +2,7 @@ def open_in_textmate directory
   if File.exists?(directory)
     system "mate #{directory}"
   else
-    puts "#{directory} doesn't exist."
+    puts "#{directory} doesn't exist"
   end
 end
 
@@ -14,12 +14,12 @@ projects = {
   # dlm
 }
 
-desc "Opens skin & theme in textmate."
+desc "Opens skin & theme in textmate"
 task :open => ["open:theme","open:skin"]
 
 namespace :open do
   projects.each do |name, dir|
-    desc "Open #{name.to_s} in textmate."
+    desc "Open #{name.to_s} in textmate"
     task name do
       open_in_textmate dir
     end

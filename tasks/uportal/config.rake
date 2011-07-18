@@ -1,4 +1,4 @@
-desc "Configures dev environment."
+desc "Configures dev environment"
 task :config => ["config:build_properties","config:catalina_properties","config:server_xml"] do
   puts %{
     To finish setup, run:

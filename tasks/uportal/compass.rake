@@ -8,7 +8,7 @@ desc "Alias for compass:watch"
 task :compass => ["compass:watch"]
 
 namespace :compass do
-  desc "Auto-compile scss to tomcat."
+  desc "Auto-compile scss to tomcat"
   task :watch do
     compass "watch"
   end
