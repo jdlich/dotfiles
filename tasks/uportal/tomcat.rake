@@ -21,16 +21,3 @@ task :restart do
   sleep 1
   Rake.application.invoke_task :start
 end
-
-desc "Configures dev environment."
-task :config => ["config:build_properties","config:catalina_properties","config:server_xml"] do
-  print <<MESSAGE
-    To finish setup, run:
-    
-    ant hsql
-    ant initportal
-    ant deploy-ear
-    rake start
-      
-MESSAGE
-end

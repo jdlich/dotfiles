@@ -1,3 +1,15 @@
+desc "Configures dev environment."
+task :config => ["config:build_properties","config:catalina_properties","config:server_xml"] do
+  puts %{
+    To finish setup, run:
+    
+    ant hsql
+    ant initportal
+    rake start
+
+}
+end
+
 namespace :config do
   desc "Configures build.properties"
   task :build_properties do
