@@ -1,1 +1,0 @@
-complete -C $DOTFILES/bin/rake_completion -o default rake

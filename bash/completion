@@ -1,0 +1,2 @@
+complete -C $DOTFILES/bash/completions/rake_tasks -o default rake
+complete -C $DOTFILES/bash/completions/pojects -o default c

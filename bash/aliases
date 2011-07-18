@@ -1,16 +1,14 @@
-#
-#		Basic Shortcuts
-#
+
 alias la='ls -a'
 alias ll='ls -l'
 alias lf='ls -F'
 alias ..='cd ..'
+alias reload='source ~/.bashrc'
 
-alias dotfiles='cd ${DOTFILES}; mate .'
+# change to project directory
+function c { cd ~/Code/$1; }
 
-# 
-#		Git
-#
+# git
 alias gs='git status'
 alias ga='git add .'
 alias gd='git ls-files --deleted | xargs git rm'
@@ -18,9 +16,6 @@ alias gc='git commit -a'
 alias gl='git log'
 alias gp='git push'
 
-#
-#		Miscellaneous
-#
 # show and hide hidden files in the Finder
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
@@ -33,19 +28,19 @@ alias enabledashboard='defaults write com.apple.dashboard mcx-disabled -boolean 
 alias cpwd='echo -n `pwd` | pbcopy'
 
 # open files with iA Writer
-function writer() { open -a "iA Writer" $1; }
+function writer { open -a "iA Writer" $1; }
 
 # interactive JavaScript via Rhino http://www.mozilla.org/rhino/
-function rhino() { java org.mozilla.javascript.tools.shell.Main $1 $2; }
+function rhino { java org.mozilla.javascript.tools.shell.Main $1 $2; }
 
 # create and open a file in textmate
-function newfile() { touch $1; mate $1; }
+function newfile { touch $1 && mate $1; }
 
 # unpack tar file
-function unpack() { tar -xvzf $1; }
+function unpack { tar -xvzf $1; }
 
 # list out tcp connections
-function tcp() { lsof -i tcp:$1; }
+function tcp { lsof -i tcp:$1; }
 
 # find file and open in textmate
-function goto() { find . -name $1 | xargs mate; }
+function goto { find . -name $1 | xargs mate; }
