@@ -1,12 +1,14 @@
 #!/bin/sh
 
 #
-# 	Ignores files in a git repository.
-# 	Usage: ignore FILE [FILE]...
+# 	Ignore files in a git repository.
 # 
 
-if [[ ! -e ".git" ]]; then
+if [ ! -e ".git" ]; then
 	echo "Not a git repository."
+	exit 0
+elif [ -n $1 ]; then
+	echo "Usage: gitignore PATTERN [PATTERN]..."
 	exit 0
 fi
 
