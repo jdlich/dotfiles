@@ -1,4 +1,5 @@
-*Getting Started With Your Own Dotfiles*
+Getting Started With Your Own Dotfiles
+--------------------------------------
 
 I like to put my dotfiles in ~/Code and then point to them from within my ~/.bashrc file like so:
 
