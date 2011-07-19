@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Usage: ignore FILE [FILE]...
+
+if [[ ! -e ".git" ]]; then
+	echo "Not a git repository."
+	exit 0
+fi
+
+for pattern in "$@"
+do
+	echo "$pattern" | tee -a .git/info/exclude
+done
