@@ -1,2 +1,3 @@
 complete -C $DOTFILES/bash/completions/rake_tasks -o default rake
 complete -C $DOTFILES/bash/completions/projects -o default c
+complete -C $DOTFILES/bash/completions/sites -o default s

@@ -23,6 +23,9 @@ alias gp='git push'
 # change to project directory
 function c { cd ~/Code/$1; }
 
+# change to site directory
+function s { cd ~/Sites/$1; }
+
 # make files invisible/visible
 function hide { SetFile -a V $1; }
 function show { SetFile -a v $1; }
