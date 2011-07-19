@@ -1,12 +1,12 @@
 ## Getting Started With Your Own dotfiles
 
-I like to put my dotfiles in ~/Code then point to them from within my ~/.bashrc file:
+I put my dotfiles in ~/Code then point to them from within my ~/.bashrc file:
 
 	# .bashrc
 	export DOTFILES=~/Code/dotfiles
 	source $DOTFILES/bashrc
 	
-(You could put yours anywhere you want... ~/.dotfiles or somewhere in /usr/local are worthy places, for example.)
+(NOTE: You could put your dotfiles anywhere you want... ~/.dotfiles or somewhere in /usr/local are also worthy places.)
 
 The .bashrc file loads the bashrc (no period) file within my dotfiles which in turn loads my other files:
 
@@ -15,9 +15,9 @@ The .bashrc file loads the bashrc (no period) file within my dotfiles which in t
 	source $DOTFILES/bash/aliases
 	source $DOTFILES/bash/completion
 
-And that's pretty much it.
+And that's pretty much all there is to it.
 
-The idea is to have an ever evolving and growing collection of scripts and system configuration that is organized and can go where you go.
+The idea is to have an ever-evolving and growing collection of scripts and system configuration that is organized and can easily go where you go.
 
 ## dotfiles on Github
 
