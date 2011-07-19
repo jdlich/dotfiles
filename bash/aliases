@@ -1,12 +1,16 @@
 
-alias la='ls -a'
-alias ll='ls -l'
-alias lf='ls -F'
-alias ..='cd ..'
+# source
 alias reload='source ~/.bashrc'
 
-# change to project directory
-function c { cd ~/Code/$1; }
+# ls
+alias la='ls -A'
+alias ll='ls -l'
+alias lf='ls -F'
+alias l='ls -lAh'
+
+# cd
+alias ..='cd ..'
+function cdl { cd $1 && ls; }
 
 # git
 alias gs='git status'
@@ -16,6 +20,9 @@ alias gc='git commit -a'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
 
+# change to project directory
+function c { cd ~/Code/$1; }
+
 # make files invisible/visible
 function hide { SetFile -a V $1; }
 function show { SetFile -a v $1; }
@@ -23,14 +30,14 @@ function show { SetFile -a v $1; }
 # copy current directory's absolute path to clipboard
 alias cpwd='echo -n `pwd` | pbcopy'
 
-# open files with iA Writer
-function writer { open -a "iA Writer" $1; }
+# open (mostly markdown) files with iA Writer
+function w { open -a "iA Writer" $1; }
 
 # interactive JavaScript via Rhino http://www.mozilla.org/rhino/
 function rhino { java org.mozilla.javascript.tools.shell.Main $1 $2; }
 
 # create and open a file in textmate
-function newfile { touch $1 && mate $1; }
+function nf { touch $1 && mate $1; }
 
 # unpack tar file
 function unpack { tar -xvzf $1; }
@@ -38,5 +45,5 @@ function unpack { tar -xvzf $1; }
 # list out tcp connections
 function tcp { lsof -i tcp:$1; }
 
-# find file and open in textmate
+# find and open file in textmate
 function goto { find . -name $1 | xargs mate; }
