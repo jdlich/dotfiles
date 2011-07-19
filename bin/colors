@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
-# Prints ANSI escape sequence colors to the screen
-# http://kpumuk.info/ruby-on-rails/colorizing-console-ruby-script-output/
+#
+#   Prints ANSI escape sequence colors to the screen.
+#   http://kpumuk.info/ruby-on-rails/colorizing-console-ruby-script-output/
+#
 
 [0, 1, 4, 5, 7].each do |attr|
   puts '----------------------------------------------------------------'
