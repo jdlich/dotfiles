@@ -6,7 +6,7 @@ class Fetch < Clamp::Command
   option "--no-svn", :flag, "remove .svn files"
   # TODO: Add option for specifying version numbers
 
-  subcommand "uportal", "Checkout uPortal from source repository" do
+  subcommand "uportal", "Checkout uPortal 3.x from source repo" do
     def execute
       system "svn co https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
       system "find . -name '.svn' | xargs rm -r" if no_svn?
@@ -22,7 +22,7 @@ class Fetch < Clamp::Command
     end
   end
   
-  subcommand "cas", "" do
+  subcommand "cas", "Checkout CAS 3.x from source repo" do
     def execute
       system "svn co https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
       system "find . -name '.svn' | xargs rm -rf" if no_svn?

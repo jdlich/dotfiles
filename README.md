@@ -42,6 +42,7 @@ Run `rake --tasks` to make sure you're good to go (rake equivalent to ant's `ant
 
 *(NOTE: If your new to Rake, read [this](http://rake.rubyforge.org/files/doc/rational_rdoc.html) - and [this](http://jasonseifer.com/2010/04/06/rake-tutorial) is also good too with more resources at the bottom).*
 	
-## dotfiles on Github
+dotfiles on Github
+==================
 
 Lastly, be sure to steal scripts and aliases from others: <https://github.com/search?q=dotfiles&type=Repositories>

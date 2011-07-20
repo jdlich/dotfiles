@@ -1,5 +1,7 @@
 desc "Watches tomcat logs"
 task :logs do
+  log = "#{TOMCAT}/logs/catalina.out"
+  system("touch #{log}") unless File.exists?(log)
   system "tail -f #{TOMCAT}/logs/catalina.out"
 end
 
