@@ -1,7 +1,7 @@
 Getting Started With Your Own dotfiles
 ======================================
 
-If you're just throwing everything into .bashrc and you don't know half of what's in there, something is going to give sooner or later.
+If you're just throwing everything into `~/.bashrc` and you don't know half of what's in there, something is going to give sooner or later.
 
 It's time you take your computer back.
 
