@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require 'clamp'
+
+class Fetch < Clamp::Command
+  option "--no-svn", :flag, "remove .svn files"
+  # TODO: Add option for specifying version numbers
+
+  subcommand "uportal", "Checkout uPortal from source repository" do
+    def execute
+      system "svn co https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
+      system "find . -name '.svn' | xargs rm -r" if no_svn?
+      # TODO: Add pretty output ie "\t[color]download[/color] rel-3-2-patches"
+    end
+  end
+  
+  subcommand "tomcat", "Download and unpack tomcat" do
+    def execute
+      system "curl -O http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
+      system "tar -xvzf apache-tomcat-6.0.29.tar.gz"
+      system "rm -rf apache-tomcat-6.0.29.tar.gz"
+    end
+  end
+  
+  subcommand "cas", "" do
+    def execute
+      system "svn co https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
+      system "find . -name '.svn' | xargs rm -rf" if no_svn?
+    end
+  end
+
+end
+
+Fetch.run

@@ -1,6 +1,9 @@
 # Change default text editor to TextMate
 export EDITOR="mate -w"
 
+# When adding items to history, remove duplicates upstream
+export HISTCONTROL=erasedups
+
 # Ant
 export ANT_HOME="/usr/local/bin/apache-ant-1.7.1"
 
@@ -25,4 +28,4 @@ export PATH="/usr/local/Cellar/ruby/1.9.2-p180/bin:/usr/local/bin:/usr/local/sbi
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
 
 # Loads RVM into a shell session
-[[ -s "/Users/Jacob/.rvm/scripts/rvm" ]] && source "/Users/Jacob/.rvm/scripts/rvm"  
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  

@@ -50,8 +50,9 @@ namespace :config do
     </filter-mapping>}
     replace = "<!-- " + pattern + " -->"
     web_xml = "#{UPORTAL}/uportal-war/src/main/webapp/WEB-INF/web.xml"
-  
     disable_cache = File.read(web_xml).gsub(pattern,replace)
+    
     File.open(web_xml, "w+") { |f| f.write disable_cache }
+    system "cp #{web_xml} #{TOMCAT}/webapps/uPortal/WEB-INF/"
   end  
 end
