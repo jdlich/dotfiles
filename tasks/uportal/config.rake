@@ -1,10 +1,17 @@
+config_tasks = [
+  "config:build_properties",
+  "config:catalina_properties",
+  "config:server_xml",
+  "config:disable_cache" 
+]
+
 desc "Configures dev environment"
-task :config => ["config:build_properties","config:catalina_properties","config:server_xml"] do
+task :config => config_tasks do
   puts %{
     To finish setup, run:
     
-    ant hsql
-    ant initportal
+    rake hsql
+    rake initportal
     rake start
 
 }
@@ -54,5 +61,10 @@ namespace :config do
     
     File.open(web_xml, "w+") { |f| f.write disable_cache }
     system "cp #{web_xml} #{TOMCAT}/webapps/uPortal/WEB-INF/"
-  end  
+  end
+  
+  # desc "Enable SSL (for CAS)"
+  # task :enable_ssl do
+  #   # TODO
+  # end
 end
