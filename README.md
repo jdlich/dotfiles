@@ -5,7 +5,7 @@ If you're just throwing everything into .bashrc and you don't know half of what'
 
 It's time you take your computer back.
 
-Here's how I have learned to reign it in a little bit. First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places). 
+Here's how I have learned to reign things in a little bit. First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places). 
 
 Now, this is what my `.bashrc` file looks like:
 
@@ -15,15 +15,17 @@ Now, this is what my `.bashrc` file looks like:
 	
 *(NOTE: The `$DOTFILES` environment variable is set here in case the location of my dotfiles changes ie different system).*
 
-The `.bashrc` loads the `bashrc` file (no period) in my dotfiles which in turn loads other files (in this case, my environment variables, my aliases and functions and my tab completions) allowing for more organization.
+The `.bashrc` loads the `bashrc` file (no period) in my dotfiles which in turn loads other files (in this case, my environment variables, my aliases and functions and my tab completions).
 
 	# ~/Code/dotfiles/bashrc
 	source $DOTFILES/bash/env
 	source $DOTFILES/bash/aliases
 	source $DOTFILES/bash/completion
 
-Using the Rake Tasks
-====================
+Now you're free to organize to your heart's content, get it up on Github and take it with you everywhere you go. Woop woop.
+
+Using my Rake Tasks
+===================
 
 A Rakefile for a uPortal/tomcat project would look something like this:
 	
@@ -36,7 +38,7 @@ A Rakefile for a uPortal/tomcat project would look something like this:
 	  Dir["#{`echo $DOTFILES`.chomp}/tasks/#{tasks}/*"].each { |rakefile| load rakefile }
 	end
 
-*If your new to Rake, read [this](http://rake.rubyforge.org/files/doc/rational_rdoc.html) - and [this](http://jasonseifer.com/2010/04/06/rake-tutorial) is also good too (with even more resources at the bottom).*
+*(NOTE: If your new to Rake, read [this](http://rake.rubyforge.org/files/doc/rational_rdoc.html) - and [this](http://jasonseifer.com/2010/04/06/rake-tutorial) is also good too with more resources at the bottom).*
 	
 ## dotfiles on Github
 
