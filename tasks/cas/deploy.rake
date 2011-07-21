@@ -1,5 +1,8 @@
 desc "Alias for CAS build, clean, and deploy."
-task :deploy => ["stop", "cas:clean", "cas:build", "cas:deploy", "start"]
+task :deploy => ["stop", "cas:clean", "cas:build", "cas:deploy"] do
+  sleep 3 # allow some time for tomcat
+  Rake.application.invoke_task :start
+end
 
 namespace :cas do
   desc "Build CAS and auto-deploy war."
