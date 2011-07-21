@@ -5,7 +5,7 @@ namespace :publish do
   
   desc "Publish cas webapp to tomcat"
   task :webapp do
-    webapp = "#{CAS}/cas-server-webapp/src/main/webapp/*"
+    webapp = "#{CAS}/src/main/webapp/*"
     tomcat = "#{TOMCAT}/webapps/cas/"
     
     system "cp -r #{webapp} #{tomcat}"
