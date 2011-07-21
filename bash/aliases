@@ -26,6 +26,12 @@ function c { cd ~/Code/$1; }
 # change to site directory
 function s { cd ~/Sites/$1; }
 
+# search for file
+function f { find . -name $1; }
+
+# search for text
+function g { find . -name "*" | xargs grep $1; }
+
 # make files invisible/visible
 function hide { SetFile -a V $1; }
 function show { SetFile -a v $1; }

@@ -1,12 +1,5 @@
-config_tasks = [
-  "config:build_properties",
-  "config:catalina_properties",
-  "config:server_xml",
-  "config:disable_cache" 
-]
-
 desc "Configures dev environment"
-task :config => config_tasks do
+task :config => [ "config:build_properties", "config:catalina_properties", "config:server_xml", "config:disable_cache"] do
   puts %{
     To finish setup, run:
     
