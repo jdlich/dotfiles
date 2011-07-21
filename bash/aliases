@@ -40,7 +40,12 @@ function show { SetFile -a v $1; }
 alias cpwd='echo -n `pwd` | pbcopy'
 
 # open (mostly markdown) files with iA Writer
-function w { open -a "iA Writer" $1; }
+function w {
+	if [ ! -e $1 ]; then
+		touch $1
+	fi
+	open -a "iA Writer" $1
+}
 
 # interactive JavaScript via Rhino http://www.mozilla.org/rhino/
 function rhino { java org.mozilla.javascript.tools.shell.Main $1 $2; }
