@@ -48,7 +48,7 @@ function w {
 }
 
 # copy ipaddress to clipboard
-function ip { ruby -e '`ifconfig en1`.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
+function ip { ifconfig en1 | ruby -e '$_.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
 
 # interactive JavaScript via Rhino http://www.mozilla.org/rhino/
 function rhino { java org.mozilla.javascript.tools.shell.Main $1 $2; }
