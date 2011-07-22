@@ -20,6 +20,11 @@ alias gc='git commit -a'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
 
+# svn
+alias ss='svn status'
+function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn delete }
+function ksdiff { svn diff --diff-cmd=ksdiff-svnwrapper $1; }
+
 # change to project directory
 function c { cd ~/Code/$1; }
 
@@ -39,14 +44,6 @@ function show { SetFile -a v $1; }
 # copy current directory's absolute path to clipboard
 alias cpwd='echo -n `pwd` | pbcopy'
 
-# open (mostly markdown) files with iA Writer
-function w {
-	if [ ! -e $1 ]; then
-		touch $1
-	fi
-	open -a "iA Writer" $1
-}
-
 # copy ipaddress to clipboard
 function ip { ifconfig en1 | ruby -ne '$_.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
 
@@ -64,3 +61,11 @@ function tcp { lsof -i tcp:$1; }
 
 # find and open file in textmate
 function goto { find . -name $1 | xargs mate; }
+
+# open (mostly markdown) files with iA Writer
+function w {
+	if [ ! -e $1 ]; then
+		touch $1
+	fi
+	open -a "iA Writer" $1
+}
