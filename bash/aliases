@@ -22,7 +22,7 @@ alias gp='git push'
 
 # svn
 alias ss='svn status'
-function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn delete }
+function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
 function ksdiff { svn diff --diff-cmd=ksdiff-svnwrapper $1; }
 
 # change to project directory
