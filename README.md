@@ -5,11 +5,20 @@ If you're just throwing everything into `~/.bashrc` and you don't know half of w
 
 It's time you take your computer back.
 
-Here's how I have learned to reign things in a little bit. First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places). 
+Here's how I have learned to reign things in a little bit. First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places).
 
-Now, this is what my `.bashrc` file looks like:
+Now, you'll need something like this in `~/.bash_profile` to begin with:
 
-	# .bashrc
+    # ~/.bash_profile
+    if [ -f ~/.bashrc ]; then
+       source ~/.bashrc
+    fi
+
+*(NOTE: Make sure to read [this](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html))*
+
+Then comes `.bashrc` which contains:
+
+	# ~/.bashrc
 	export DOTFILES=~/Code/dotfiles
 	source $DOTFILES/bashrc
 	
