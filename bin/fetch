@@ -9,7 +9,7 @@ class Fetch < Clamp::Command
   subcommand "uportal", "Checkout uPortal 3.x from source repo" do
     def execute
       system "svn co https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
-      system "find . -name '.svn' | xargs rm -r" if no_svn?
+      no_svn if no_svn?
       # TODO: Add pretty output ie "\t[color]download[/color] rel-3-2-patches"
     end
   end
@@ -25,10 +25,15 @@ class Fetch < Clamp::Command
   subcommand "cas", "Checkout CAS 3.x from source repo" do
     def execute
       system "svn co https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
-      system "find . -name '.svn' | xargs rm -rf" if no_svn?
+      no_svn if no_svn?
     end
   end
-
+  
+  private
+  
+  def no_svn
+    system "find . -name '.svn' | xargs rm -r"
+  end
 end
 
 Fetch.run
