@@ -22,12 +22,16 @@ The `.bashrc` loads the `bashrc` file (no period) in my dotfiles which in turn l
 	source $DOTFILES/bash/aliases
 	source $DOTFILES/bash/completion
 
-Now you're free to organize to your heart's content, get it up on Github and take it with you everywhere you go. Woop woop.
+So, my `~/.bashrc` loads `~/Code/dotfiles/bashrc` which loads `~/Code/dotfiles/bash/{env,aliases,completion}
+
+This allows me to have everything in its place, get it up on Github and take it with me everywhere I go.
 
 Using my Rake Tasks
 ===================
 
-A Rakefile for a uPortal/tomcat project would look something like this:
+*(NOTE: If your new to Rake, read [this](http://rake.rubyforge.org/files/doc/rational_rdoc.html) - and [this](http://jasonseifer.com/2010/04/06/rake-tutorial) is also good too with more resources at the bottom).*
+
+A typical Rakefile for a uPortal/tomcat project looks something like this:
 	
 	# Rakefile
 	TOMCAT  = "apache-tomcat-6.0.29" # => path to tomcat root
@@ -39,8 +43,6 @@ A Rakefile for a uPortal/tomcat project would look something like this:
 	end
 
 Run `rake --tasks` to make sure you're good to go (rake equivalent to ant's `ant -p`).
-
-*(NOTE: If your new to Rake, read [this](http://rake.rubyforge.org/files/doc/rational_rdoc.html) - and [this](http://jasonseifer.com/2010/04/06/rake-tutorial) is also good too with more resources at the bottom).*
 	
 dotfiles on Github
 ==================
