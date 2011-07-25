@@ -23,9 +23,4 @@ namespace :open do
   task :cas_properties do
     system "mate #{CAS}/src/main/webapp/WEB-INF/cas.properties"
   end
-  
-  desc "Open deployerConfigContext.xml"
-  task :deployer_config_context do
-    system "mate #{CAS}/src/main/webapp/WEB-INF/deployerConfigContext.xml"
-  end
 end
