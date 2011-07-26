@@ -31,7 +31,7 @@ The `.bashrc` loads the `bashrc` file (no period) in my dotfiles which in turn l
 	source $DOTFILES/bash/aliases
 	source $DOTFILES/bash/completion
 
-So, my `~/.bashrc` loads `~/Code/dotfiles/bashrc` which loads `~/Code/dotfiles/bash/{env,aliases,completion}
+So, my `~/.bashrc` loads `~/Code/dotfiles/bashrc` which loads `~/Code/dotfiles/bash/{env,aliases,completion}`
 
 This allows me to have everything in its place, get it up on Github and take it with me everywhere I go.
 
