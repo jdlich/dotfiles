@@ -4,34 +4,59 @@ require 'clamp'
 
 class Fetch < Clamp::Command
   option "--no-svn", :flag, "remove .svn files"
-  # TODO: Add option for specifying version numbers
 
+  # uPortal
   subcommand "uportal", "Checkout uPortal 3.x from source repo" do
     def execute
-      system "svn co https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
-      no_svn if no_svn?
-      # TODO: Add pretty output ie "\t[color]download[/color] rel-3-2-patches"
+      svn "https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
+      remove_svn_files if no_svn?
     end
   end
   
-  subcommand "tomcat", "Download and unpack tomcat" do
+  # Tomcat
+  subcommand "tomcat", "Download and unpack tomcat 6" do
+    parameter "[VERSION]", "tomcat version"
+    
     def execute
-      system "curl -O http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
+      tomcat = case version
+        when 5 then
+          "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
+        else
+          "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
+      end
+      download tomcat
       system "tar -xvzf apache-tomcat-6.0.29.tar.gz"
       system "rm -rf apache-tomcat-6.0.29.tar.gz"
     end
   end
   
+  # CAS
   subcommand "cas", "Checkout CAS 3.x from source repo" do
     def execute
-      system "svn co https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
-      no_svn if no_svn?
+      svn "https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
+      remove_svn_files if no_svn?
+    end
+  end
+  
+  # Sakai
+  subcommand "sakai", "Checkout Sakai CLE" do
+    def execute
+      svn "https://source.sakaiproject.org/svn/sakai/branches/sakai-2.7.1/"
+      remove_svn_files if no_svn?
     end
   end
   
   private
   
-  def no_svn
+  def download url
+    system "curl -O #{url}"
+  end
+  
+  def svn repo
+    system "svn co #{repo}"
+  end
+  
+  def remove_svn_files
     system "find . -name '.svn' | xargs rm -r"
   end
 end
