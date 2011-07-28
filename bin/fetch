@@ -9,7 +9,7 @@ class Fetch < Clamp::Command
   subcommand "uportal", "Checkout uPortal 3.x from source repo" do
     def execute
       svn "https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
-      remove_svn_files if no_svn?
+      remove_recursive('.svn') if no_svn?
     end
   end
   
@@ -25,8 +25,9 @@ class Fetch < Clamp::Command
         "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
       end
       download tomcat
-      system "tar -xvzf apache-tomcat-6.0.29.tar.gz"
-      system "rm -rf apache-tomcat-6.0.29.tar.gz"
+      tarfile = tomcat.split("/").last
+      unpack tarfile
+      remove tarfile
     end
   end
   
@@ -34,7 +35,7 @@ class Fetch < Clamp::Command
   subcommand "cas", "Checkout CAS 3.x from source repo" do
     def execute
       svn "https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
-      remove_svn_files if no_svn?
+      remove_recursive('.svn') if no_svn?
     end
   end
   
@@ -42,11 +43,23 @@ class Fetch < Clamp::Command
   subcommand "sakai", "Checkout Sakai CLE" do
     def execute
       svn "https://source.sakaiproject.org/svn/sakai/branches/sakai-2.7.1/"
-      remove_svn_files if no_svn?
+      remove_recursive('.svn') if no_svn?
     end
   end
   
   private
+  
+  def remove file
+    system "rm -rf #{file}"
+  end
+  
+  def remove_recursive file
+    system "find . -name #{file} | xargs rm -r"
+  end
+  
+  def unpack tar
+    system "tar -xvzf #{tar}"
+  end
   
   def download url
     system "curl -O #{url}"
@@ -54,10 +67,6 @@ class Fetch < Clamp::Command
   
   def svn repo
     system "svn co #{repo}"
-  end
-  
-  def remove_svn_files
-    system "find . -name '.svn' | xargs rm -r"
   end
 end
 
