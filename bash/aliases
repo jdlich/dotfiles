@@ -64,9 +64,7 @@ function goto { find . -name $1 | xargs mate; }
 
 # open (mostly markdown) files with iA Writer
 function w {
-	if [ ! -e $1 ]; then
-		touch $1
-	fi
+	if [ ! -e $1 ]; then touch $1; fi
 	open -a "iA Writer" $1
 }
 
