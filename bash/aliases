@@ -20,6 +20,12 @@ alias gc='git commit -a'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
 
+# temporarily switch to maven 2 in current shell
+function m2 { 
+  export M2_HOME="/usr/local/bin/apache-maven-2.2.1"
+  export PATH=$M2_HOME/bin:$PATH
+}
+
 # svn
 alias ss='svn status'
 function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
