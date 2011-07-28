@@ -19,10 +19,10 @@ class Fetch < Clamp::Command
     
     def execute
       tomcat = case version
-        when 5 then
-          "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
-        else
-          "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
+      when "5"
+        "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
+      else
+        "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
       end
       download tomcat
       system "tar -xvzf apache-tomcat-6.0.29.tar.gz"
