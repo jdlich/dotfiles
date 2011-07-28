@@ -7,7 +7,7 @@
 if [ ! -e ".git" ]; then
 	echo "Not a git repository."
 	exit 0
-elif [ -n $1 ]; then
+elif [ ! $1 ]; then
 	echo "Usage: gitignore PATTERN [PATTERN]..."
 	exit 0
 fi
