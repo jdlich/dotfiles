@@ -69,3 +69,6 @@ function w {
 	fi
 	open -a "iA Writer" $1
 }
+
+# watch star wars in ASCII
+alias star_wars='telnet towel.blinkenlights.nl'
