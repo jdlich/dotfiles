@@ -8,6 +8,6 @@ namespace :publish do
     webapp = "#{CAS}/src/main/webapp/*"
     tomcat = "#{TOMCAT}/webapps/cas/"
     
-    system "rsync -rv --exclude=*svn #{webapp} #{tomcat}"
+    system "rsync -ruv --exclude '*svn' #{webapp} #{tomcat}"
   end
 end
