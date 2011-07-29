@@ -47,8 +47,11 @@ function g { find -Xx . -name "*" | xargs grep $1; }
 function hide { SetFile -a V $1; }
 function show { SetFile -a v $1; }
 
-# copy current directory's absolute path to clipboard
+# copy working directory to clipboard
 alias cpwd='echo -n `pwd` | pbcopy'
+
+# copy current filename to clipboard
+alias cfn='echo -n $(basename `pwd`) | pbcopy'
 
 # copy ipaddress to clipboard
 function ip { ifconfig en1 | ruby -ne '$_.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
