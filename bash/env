@@ -1,3 +1,6 @@
+# turn on globstar for recursive globbing
+shopt -s globstar autocd
+
 # Change default text editor to TextMate
 export EDITOR="mate -w"
 

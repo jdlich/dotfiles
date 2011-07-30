@@ -54,7 +54,7 @@ class Fetch < Clamp::Command
   end
   
   def remove_recursive file
-    system "find . -name #{file} | xargs rm -r"
+    system "rm -r **/#{file}"
   end
   
   def unpack tar
