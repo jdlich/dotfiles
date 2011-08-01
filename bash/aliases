@@ -47,10 +47,8 @@ function g { find -Xx . -name "*" | xargs grep $1; }
 function hide { SetFile -a V $1; }
 function show { SetFile -a v $1; }
 
-# copy working directory to clipboard
-alias cpwd='echo -n `pwd` | pbcopy'
-
-# copy current filename to clipboard
+# copy working directory & filename to clipboard
+alias cwd='echo -n `pwd` | pbcopy'
 alias cfn='echo -n $(basename `pwd`) | pbcopy'
 
 # copy ipaddress to clipboard
