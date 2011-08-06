@@ -19,6 +19,7 @@ alias gd='git ls-files --deleted | xargs git rm'
 alias gc='git commit -a'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
+alias gf='git difftool'
 
 # temporarily switch to maven 2 in current shell
 function m2 { 
@@ -29,7 +30,7 @@ function m2 {
 # svn
 alias ss='svn status'
 function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
-function ksdiff { svn diff --diff-cmd=ksdiff-svnwrapper $1; }
+function sf { svn diff --diff-cmd=ksdiff-svnwrapper $1; }
 
 # change to project directory
 function c { cd ~/Code/$1; }
@@ -37,10 +38,10 @@ function c { cd ~/Code/$1; }
 # change to site directory
 function s { cd ~/Sites/$1; }
 
-# search for filename
-function f { ruby -e 'Dir["**/*"].select { |f| puts f if f.match ARGV[0] }' $1; }
+# search for a file
+function f { find -x . -name $1; }
 
-# grep through files
+# search for text
 function g { find -Xx . -name "*" | xargs grep -e $1; }
 
 # make files invisible/visible
@@ -51,7 +52,7 @@ function show { SetFile -a v $1; }
 alias cwd='echo -n `pwd` | pbcopy'
 alias cfn='echo -n $(basename `pwd`) | pbcopy'
 
-# copy ipaddress to clipboard
+# copy ip address to clipboard
 function ip { ifconfig en1 | ruby -ne '$_.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
 
 # interactive JavaScript via Rhino http://www.mozilla.org/rhino/
