@@ -1,3 +1,4 @@
+
 # turn on globstar for recursive globbing
 shopt -s globstar autocd
 
@@ -31,4 +32,7 @@ export PATH="/usr/local/Cellar/ruby/1.9.2-p180/bin:/usr/local/bin:/usr/local/sbi
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
 
 # Loads RVM into a shell session
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# irb (must get exported after rvm)
+export IRBRC="$DOTFILES/irbrc"

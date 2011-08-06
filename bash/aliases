@@ -41,7 +41,7 @@ function s { cd ~/Sites/$1; }
 function f { ruby -e 'Dir["**/*"].select { |f| puts f if f.match ARGV[0] }' $1; }
 
 # grep through files
-function g { find -Xx . -name "*" | xargs grep $1; }
+function g { find -Xx . -name "*" | xargs grep -e $1; }
 
 # make files invisible/visible
 function hide { SetFile -a V $1; }
