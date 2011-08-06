@@ -3,10 +3,10 @@
 alias reload='source ~/.bashrc'
 
 # ls
+alias l='ls -F'
 alias la='ls -A'
 alias ll='ls -l'
-alias lf='ls -F'
-alias l='ls -lAh'
+alias lh='ls -lAh'
 
 # cd
 alias ..='cd ..'
