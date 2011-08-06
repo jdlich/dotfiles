@@ -33,6 +33,7 @@
 #
 
 require 'clamp'
+require 'fileutils'
 
 class Fetch < Clamp::Command
   option "--no-svn", :flag, "remove .svn files"
@@ -40,52 +41,46 @@ class Fetch < Clamp::Command
   # uPortal
   subcommand "uportal", "Checkout uPortal 3.x from source repo" do
     def execute
-      svn "https://source.jasig.org/uPortal/branches/rel-3-2-patches/" 
-      remove(".svn", :recursive => true) if no_svn?
+      svn "https://source.jasig.org/uPortal/branches/rel-3-2-patches/", :remove_svn => no_svn?
     end
   end
   
   # Tomcat
   subcommand "tomcat", "Download and unpack tomcat 6" do
-    parameter "[VERSION]", "tomcat version"
+    parameter("[VERSION]", "tomcat version") { |s| s.to_i }
     
     def execute
-      tomcat = case version
-      when "5"
-        "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
-      else
-        "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
-      end
-      download tomcat
-      tarfile = tomcat.split("/").last
-      unpack tarfile
-      remove tarfile
+      v5  = "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
+      v6  = "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
+      url = (version == 5 ? v5 : v6)      
+      tar = url.split("/").last
+      
+      download url
+      unpack tar
+      rm tar
     end
   end
   
   # CAS
   subcommand "cas", "Checkout CAS 3.x from source repo" do
     def execute
-      svn "https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/"
-      remove(".svn", :recursive => true) if no_svn?
+      svn "https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/", :remove_svn => no_svn?
     end
   end
   
   # Sakai
   subcommand "sakai", "Checkout Sakai CLE" do
     def execute
-      svn "https://source.sakaiproject.org/svn/sakai/branches/sakai-2.7.1/"
-      remove_recursive('.svn') if no_svn?
+      svn "https://source.sakaiproject.org/svn/sakai/branches/sakai-2.7.1/", :remove_svn => no_svn?
     end
   end
   
   private
   
-  def remove file, options={}
-    file = (options[:recursive] ? "**/" : "") + file
-    puts "rm -rf #{file}"
+  def rm file
+    FileUtils.rm_rf file
   end
-  
+    
   def unpack tar
     system "tar -xvzf #{tar}"
   end
@@ -94,8 +89,9 @@ class Fetch < Clamp::Command
     system "curl -O #{url}"
   end
   
-  def svn repo
+  def svn repo, options={}
     system "svn co #{repo}"
+    system "rm -rf **/.svn" if options[:remove_svn]
   end
 end
 
