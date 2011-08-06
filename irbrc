@@ -1,7 +1,7 @@
 require 'irb/completion'
 require 'wirble'
 require 'mp3info'
-require 'pp'
+require 'ap'
 
 Wirble.init
 Wirble.colorize
