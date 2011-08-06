@@ -28,8 +28,7 @@
 # 
 # This came out of need (or desire) to not ever have to hunt down a url for a code library again (at least not 
 # twice). I also don't want to store stuff on my computer or copy stuff from older projects. 'What's that plugin I 
-# used for that one project...'. Enter fetch. Download popular jquery plugins, common repos, tomcat, etc and inject 
-# straight into the directories you want with a single command.
+# used for that one project...'. Enter fetch. Download popular jquery plugins, common repos, tomcat, etc and inject # them straight into the directories you want with a single command.
 #
 
 require 'clamp'
