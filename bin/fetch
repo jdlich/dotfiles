@@ -4,7 +4,7 @@
 # TODO: Adding new tarfiles to fetch and repositories to checkout will eventually lead to a need for another level 
 # of abstraction. Currently, the specific shell commands are being abstracted ie 'unpack', etc, but that's not 
 # enough (and might be unneccesary). A better abstraction would be on resource type ie tarball, svn repo, regular 
-# download (jquery plugin), etc. Examples:
+# download (jquery plugin), a CSS framework, etc. Examples:
 #
 # def tarfile url
 #   download
@@ -26,9 +26,10 @@
 # Fetch.new(url, :type => :svn)
 # Fetch.new(url, :type => :zip)
 # 
-# This came out of need (or desire) to not ever have to hunt down a url for a code library again (at least not 
-# twice). I also don't want to store stuff on my computer or copy stuff from older projects. 'What's that plugin I 
-# used for that one project...'. Enter fetch. Download popular jquery plugins, common repos, tomcat, etc and inject # them straight into the directories you want with a single command.
+# This came out of the pain of having hunt stuff down via Google, etc. I also don't want to store stuff on my 
+# computer or copy stuff from older projects. 'What's that plugin I used for that one project...'. Enter fetch. 
+# Download popular jquery plugins, repos, tomcat, fonts, etc and inject them straight into the directories you 
+# want with a single command.
 #
 
 require 'clamp'
