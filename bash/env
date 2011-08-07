@@ -30,11 +30,11 @@ export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
 # Path
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$PATH"
 
-# Customized prompt via http://vc.gerg.ca/hg/vcprompt
+# Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
 
-# Loads RVM into a shell session
+# Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# irb (must get exported after rvm)
+# IRB (must get exported after rvm)
 export IRBRC="$DOTFILES/irbrc"
