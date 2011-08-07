@@ -1,10 +1,12 @@
-require 'irb/completion'
-require 'wirble'
 require 'mp3info'
 require 'ap'
+require 'wirble'
+require 'bond'
 
 Wirble.init
 Wirble.colorize
+
+Bond.start
 
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:AUTO_INDENT]  = true
