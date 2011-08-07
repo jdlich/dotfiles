@@ -22,11 +22,13 @@ export JAVA_OPTS="-XX:MaxPermSize=2048m -Xms128m -Xmx2048m"
 # SSH
 export SSH_ENV="$HOME/.ssh/environment"
 
-# Load rubygems without requiring it in every script
+# Ruby
 export RUBYOPT=rubygems
+export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
+# export RUBY_VERSION=`ruby -v | ruby -ne 'print $_.slice(/(\d|\.)+(\w|\w)+/)'`
 
 # Path
-export PATH="/usr/local/Cellar/ruby/1.9.2-p180/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$PATH"
 
 # Customized prompt via http://vc.gerg.ca/hg/vcprompt
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
