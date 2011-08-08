@@ -43,6 +43,7 @@ namespace :config do
   
   desc "Disable cache in web.xml"
   task :disable_cache do
+    # TODO: don't disable cache if already disabled
     pattern = %{<filter-mapping>
         <filter-name>pageCachingFilter</filter-name>
         <url-pattern>*.js</url-pattern>

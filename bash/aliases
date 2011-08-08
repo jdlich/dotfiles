@@ -24,8 +24,8 @@ alias gf='git difftool'
 
 # temporarily switch to maven 2 in current shell
 function m2 { 
-  export M2_HOME="/usr/local/bin/apache-maven-2.2.1"
-  export PATH=$M2_HOME/bin:$PATH
+  export M2_HOME='/usr/local/bin/apache-maven-2.2.1'
+  export PATH='$M2_HOME/bin:$PATH'
 }
 
 # svn
