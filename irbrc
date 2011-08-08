@@ -2,6 +2,7 @@ require 'mp3info'
 require 'ap'
 require 'wirble'
 require 'bond'
+require 'json'
 
 Wirble.init
 Wirble.colorize
