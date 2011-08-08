@@ -10,6 +10,7 @@ alias lh='ls -lAh'
 
 # cd
 alias ..='cd ..'
+alias d='cd ~/Desktop'
 function cdl { cd $1 && ls; }
 
 # git
