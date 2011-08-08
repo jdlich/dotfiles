@@ -53,7 +53,6 @@ namespace :config do
     disable_cache = File.read(web_xml).gsub(pattern,replace)
     
     File.open(web_xml, "w+") { |f| f.write disable_cache }
-    system "cp #{web_xml} #{TOMCAT}/webapps/uPortal/WEB-INF/"
   end
   
   # desc "Enable SSL (for CAS)"
