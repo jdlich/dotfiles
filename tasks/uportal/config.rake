@@ -48,6 +48,13 @@ namespace :config do
         <filter-name>pageCachingFilter</filter-name>
         <url-pattern>*.js</url-pattern>
         <url-pattern>*.css</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>CacheExpiresFilter</filter-name>
+        <url-pattern>/media/*</url-pattern>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.css</url-pattern>
     </filter-mapping>}
     replace = "<!-- " + pattern + " -->"
     web_xml = "#{UPORTAL}/uportal-war/src/main/webapp/WEB-INF/web.xml"
