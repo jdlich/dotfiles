@@ -59,12 +59,6 @@ alias cfn='echo -n $(basename `pwd`) | pbcopy'
 # copy ip address to clipboard
 function ip { ifconfig en1 | ruby -ne '$_.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
 
-# interactive JavaScript via Rhino http://www.mozilla.org/rhino/
-function rhino { java org.mozilla.javascript.tools.shell.Main $1 $2; }
-
-# create and open a file in textmate
-function nf { touch $1 && mate $1; }
-
 # unpack tar file
 function unpack { tar -xvzf $1; }
 
@@ -75,9 +69,6 @@ function tcp { lsof -i tcp:$1; }
 function goto { find . -name $1 | xargs mate; }
 
 # open (mostly markdown) files with iA Writer
-function w {
+function write {
 	if [ ! -e $1 ]; then touch $1; fi; open -a "iA Writer" $1
 }
-
-# watch star wars in ASCII
-alias star_wars='telnet towel.blinkenlights.nl'
