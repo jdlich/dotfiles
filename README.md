@@ -1,39 +1,39 @@
 Getting Started With Your Own dotfiles
 ======================================
 
-If you're just throwing everything into `~/.bashrc` and you don't know half of what's in there, something is going to give sooner or later.
+If you're just throwing everything into `~/.bashrc` something is going to give sooner or later. Here's how I have learned to reign things in a little bit. 
 
-It's time you take your computer back.
+First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places).
 
-Here's how I have learned to reign things in a little bit. First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places).
+Now, the first thing is to have the following in `~/.bash_profile`:
 
-Now, you'll need something like this in `~/.bash_profile` to begin with:
-
-    # ~/.bash_profile
+	 # ~/.bash_profile
     if [ -f ~/.bashrc ]; then
        source ~/.bashrc
     fi
 
-*(NOTE: Make sure to read [this](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html))*
+*(If your curious about the different bash files, read [this](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html))*
 
-Then comes `.bashrc` which contains:
+Next, is `.bashrc`:
 
 	# ~/.bashrc
 	export DOTFILES=~/Code/dotfiles
 	source $DOTFILES/bashrc
 	
-*(NOTE: The `$DOTFILES` environment variable is set here in case the location of my dotfiles changes ie different system).*
+*(The `$DOTFILES` environment variable is set here in case the location of my dotfiles changes i.e. different system.)*
 
-The `.bashrc` loads the `bashrc` file (no period) in my dotfiles which in turn loads other files (in this case, my environment variables, my aliases and functions and my tab completions).
+Which points to the `bashrc` file (no period) in my dotfiles, which, in turn, loads my dotfiles:
 
 	# ~/Code/dotfiles/bashrc
 	source $DOTFILES/bash/env
 	source $DOTFILES/bash/aliases
 	source $DOTFILES/bash/completion
 
-So, my `~/.bashrc` loads `~/Code/dotfiles/bashrc` which loads `~/Code/dotfiles/bash/{env,aliases,completion}`
+So, `.bash_login` loads `.bashrc` which loads `bashrc` which loads my dotfiles.
 
-This allows me to have everything in its place, get it up on Github and take it with me everywhere I go.
+There are, of course, [other](http://dottedmag.net/2011/05/29/dotfiles-setup/) [ways](http://www.splitbrain.org/blog/2011-02/16-managing_dotfiles_with_dropbox) to do this.
+
+Bottomline, stop cooking up that bash spaghetti.
 
 Using my Rake Tasks
 ===================
@@ -56,4 +56,4 @@ Run `rake --tasks` to make sure you're good to go (rake equivalent to ant's `ant
 dotfiles on Github
 ==================
 
-Lastly, be sure to steal scripts and aliases from others: <https://github.com/search?q=dotfiles&type=Repositories>
+Lastly, far greater dotfiles can be found elsewhere on GitHub: <https://github.com/search?q=dotfiles&type=Repositories>

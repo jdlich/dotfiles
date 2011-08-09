@@ -33,6 +33,9 @@ alias ss='svn status'
 function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
 function sf { svn diff --diff-cmd=ksdiff-svnwrapper $1; }
 
+# patch
+function patch { patch -p0 -i $1; }
+
 # change to project directory
 function c { cd ~/Code/$1; }
 
