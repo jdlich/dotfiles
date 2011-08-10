@@ -29,11 +29,9 @@ Which points to the `bashrc` file (no period) in my dotfiles, which, in turn, lo
 	source $DOTFILES/bash/aliases
 	source $DOTFILES/bash/completion
 
-So, `.bash_login` loads `.bashrc` which loads `bashrc` which loads my dotfiles.
+So, `.bash_login` loads `.bashrc` which loads `bashrc` which loads my dotfiles... which can now be organized, version controlled, published, etc.
 
-There are, of course, [other](http://dottedmag.net/2011/05/29/dotfiles-setup/) [ways](http://www.splitbrain.org/blog/2011-02/16-managing_dotfiles_with_dropbox) to do this.
-
-Bottomline, stop cooking up that bash spaghetti.
+There are, of course, [other](http://dottedmag.net/2011/05/29/dotfiles-setup/) [ways](http://www.splitbrain.org/blog/2011-02/16-managing_dotfiles_with_dropbox) to do [this](https://github.com/jcoglan/dotfiles/blob/master/Rakefile).
 
 Using my Rake Tasks
 ===================
