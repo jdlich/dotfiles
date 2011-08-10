@@ -45,9 +45,6 @@ function s { cd ~/Sites/$1; }
 # search for a file
 function f { find -x . -name $1; }
 
-# search for text
-function g { find -Xx . -name "*" | xargs grep -e $1; }
-
 # make files invisible/visible
 function hide { SetFile -a V $1; }
 function show { SetFile -a v $1; }
