@@ -24,6 +24,7 @@ export SSH_ENV="$HOME/.ssh/environment"
 
 # Ruby
 export RUBYOPT=rubygems
+export GEM_HOME='/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems'
 export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
 # export RUBY_VERSION=`ruby -v | ruby -ne 'print $_.slice(/(\d|\.)+(\w|\w)+/)'`
 
