@@ -34,8 +34,5 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/$RUBY_VERSION
 # Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
 
-# Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # IRB (must get exported after rvm)
 export IRBRC="$DOTFILES/irbrc"

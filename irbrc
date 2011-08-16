@@ -15,9 +15,12 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:AUTO_INDENT]  = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
-# Help explore unknown objects
-class Object
-  def interesting_methods
-    (self.methods - Object.instance_methods).sort
+# Examine mp3 files
+def mp3info mp3
+  Mp3Info.open(mp3) do |mp3|
+    puts "Title: #{mp3.tag.title}"
+    puts "Artist: #{mp3.tag.artist}"
+    puts "Album: #{mp3.tag.album}"
+    puts "Track: #{mp3.tag.tracknum}"
   end
 end

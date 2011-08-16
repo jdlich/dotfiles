@@ -4,7 +4,7 @@ alias reload='source ~/.bashrc'
 
 # ls
 alias l='ls -F'
-alias la='ls -A'
+alias la='ls -FA'
 alias ll='ls -l'
 alias lh='ls -lAh'
 

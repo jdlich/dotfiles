@@ -1,7 +1,7 @@
 desc "Copies skin, theme and cas to tomcat"
 task :publish => ["publish:skin","publish:theme","publish:common"]
 
-def rsync src, dst
+def rsync(src, dst)
   system "rsync -ruv --exclude '*svn' --exclude 'scss' --exclude '.sass*' #{src} #{dst}"
 end
 
