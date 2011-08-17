@@ -29,7 +29,7 @@ export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
 # export RUBY_VERSION=`ruby -v | ruby -ne 'print $_.slice(/(\d|\.)+(\w|\w)+/)'`
 
 # Path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
 # Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
