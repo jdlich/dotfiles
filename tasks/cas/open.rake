@@ -16,11 +16,11 @@ namespace :open do
   
   desc "Opens webapp directory in textmate."
   task :webapp do
-    system "mate #{CAS}/src/main/webapp/"
+    system "mate #{CAS}/cas-server-webapp/src/main/webapp/"
   end
   
   desc "Open cas.properties"
   task :cas_properties do
-    system "mate #{CAS}/src/main/webapp/WEB-INF/cas.properties"
+    system "mate #{CAS}/cas-server-webapp/src/main/webapp/WEB-INF/cas.properties"
   end
 end
