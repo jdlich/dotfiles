@@ -19,6 +19,6 @@ namespace :cas do
   
   desc "Deploys cas.war to tomcat"
   task :deploy do
-    system "cp #{CAS}/target/cas.war #{TOMCAT}/webapps/"
+    system "cp #{CAS}/cas-server-webapp/target/cas.war #{TOMCAT}/webapps/"
   end
 end
