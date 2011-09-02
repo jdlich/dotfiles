@@ -1,10 +1,11 @@
 ## Getting Started With Your Own dotfiles
 
-If you're just throwing everything into `~/.bashrc` something is going to give sooner or later. Here's how I have learned to reign things in a little bit. 
+After you fork this project, set the location of your dotfiles in `bashrc`:
 
-First, my dotfiles are located in `~/Code` (you could put your dotfiles anywhere such as `~/.dotfiles` or `/usr/local` which are also worthy places).
+	# ~/.bashrc
+	export DOTFILES=~/Code/dotfiles
 
-Now, the first thing is to have the following in `~/.bash_profile`:
+Next thing is to have the following in `~/.bash_profile`:
 
 	 # ~/.bash_profile
     if [ -f ~/.bashrc ]; then
@@ -12,25 +13,10 @@ Now, the first thing is to have the following in `~/.bash_profile`:
     fi
 
 *(If your curious about the different bash files, read [this](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html))*
-
-Next, is `.bashrc`:
-
-	# ~/.bashrc
-	export DOTFILES=~/Code/dotfiles
-	source $DOTFILES/bashrc
 	
-*(The `$DOTFILES` environment variable is set here in case the location of my dotfiles changes.)*
+Finally, run the install script using `rake`:
 
-Which points to the `bashrc` file (no period) in my dotfiles, which, in turn, loads my dotfiles:
-
-	# ~/Code/dotfiles/bashrc
-	source $DOTFILES/bash/env
-	source $DOTFILES/bash/aliases
-	source $DOTFILES/bash/completion
-
-So, `.bash_login` loads `.bashrc` which loads `bashrc` which loads my dotfiles... which can now be organized, version controlled, published, etc.
-
-There are, of course, [other](http://dottedmag.net/2011/05/29/dotfiles-setup/) [ways](http://www.splitbrain.org/blog/2011-02/16-managing_dotfiles_with_dropbox) to do [this](https://github.com/jcoglan/dotfiles/blob/master/Rakefile).
+	rake install
 	
 ## dotfiles on Github
 
