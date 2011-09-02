@@ -2,7 +2,7 @@
 
 After you fork this project, set the location of your dotfiles in `bashrc`:
 
-	# ~/.bashrc
+	# bashrc
 	export DOTFILES=~/Code/dotfiles
 
 Next thing is to have the following in `~/.bash_profile`:
