@@ -22,28 +22,19 @@ alias gl='git log --pretty="%H %s"'
 alias gp='git push'
 alias gf='git difftool'
 
+# search
+alias f='find -x . -name'
+
 # svn
 alias ss='svn status'
 function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
 function sf { svn diff --diff-cmd=ksdiff-svnwrapper $1; }
 
-# patch
-function patch { patch -p0 -i $1; }
-
-# change to project directory
+# site and project completions
 function c { cd ~/Code/$1; }
-
-# change to site directory
 function s { cd ~/Sites/$1; }
 
-# search for a file
-function f { find -x . -name $1; }
-
-# make files invisible/visible
-function hide { SetFile -a V $1; }
-function show { SetFile -a v $1; }
-
-# copy working directory & filename to clipboard
+# copy working directory & filename
 alias cwd='echo -n `pwd` | pbcopy'
 alias cfn='echo -n $(basename `pwd`) | pbcopy'
 
@@ -51,13 +42,10 @@ alias cfn='echo -n $(basename `pwd`) | pbcopy'
 function ip { ifconfig en1 | ruby -ne '$_.match(/inet\s((\d|\.)+)/) { print $1 }' | pbcopy; }
 
 # unpack tar file
-function unpack { tar -xvzf $1; }
+alias unpack='tar -xvzf'
 
-# list out tcp connections
+# list out processes running on a specific port
 function tcp { lsof -i tcp:$1; }
-
-# find and open file in textmate
-function goto { find . -name $1 | xargs mate; }
 
 # open (mostly markdown) files with iA Writer
 function write {

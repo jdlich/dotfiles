@@ -1,4 +1,6 @@
-source $DOTFILES/bash/env
+export DOTFILES=~/Code/dotfiles
+
+source $DOTFILES/bash/config
 source $DOTFILES/bash/aliases
 source $DOTFILES/bash/completion
 
