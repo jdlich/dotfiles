@@ -49,5 +49,5 @@ function tcp { lsof -i tcp:$1; }
 
 # open (mostly markdown) files with iA Writer
 function write {
-	if [ ! -e $1 ]; then touch $1; fi; open -a "iA Writer" $1
+  if [ ! -e $1 ]; then touch $1; fi; open -a "iA Writer" $1
 }
