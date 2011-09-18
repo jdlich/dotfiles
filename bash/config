@@ -30,7 +30,7 @@ export GEM_HOME='/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems'
 export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
 
 # Path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$PATH"
+export PATH="$GEM_HOME/bin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$PATH"
 
 # Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
