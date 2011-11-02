@@ -1,4 +1,4 @@
-%w[ mp3info ap wirble bond json ].each do |lib|
+%w[ mp3info wirble bond json ].each do |lib|
   begin
     require lib
   rescue LoadError
