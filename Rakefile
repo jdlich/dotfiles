@@ -2,7 +2,7 @@ require 'fileutils'
 
 def install_vcprompt
   unless File.exists?("/usr/local/bin/vcprompt")
-    system "curl -L https://github.com/djl/vcprompt/raw/master/bin/vcprompt > /usr/local/bin/vcprompt"
+    system "sudo curl -L https://github.com/djl/vcprompt/raw/master/bin/vcprompt > /usr/local/bin/vcprompt"
     system "sudo chmod 755 /usr/local/bin/vcprompt"
   end
 end
