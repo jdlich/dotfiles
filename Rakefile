@@ -1,5 +1,4 @@
 require 'fileutils'
-require 'open-uri'
 
 desc "Copy dotfiles to $HOME"
 task :install do
