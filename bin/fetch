@@ -45,6 +45,12 @@ class Fetch < Clamp::Command
     end
   end
   
+  subcommand "uportal-mobile", "Checkout umobile-trunk" do
+    def execute
+      svn "https://source.jasig.org/uPortal/branches/umobile-trunk/", :remove_svn => no_svn?
+    end
+  end
+  
   # Tomcat
   subcommand "tomcat", "Download and unpack tomcat 6" do
     parameter("[VERSION]", "tomcat version") { |s| s.to_i }
