@@ -8,21 +8,3 @@ task :install do
     FileUtils.cp file, File.join(ENV['HOME'], '.' + file)
   end
 end
-
-desc "Install vcprompt"
-task :vcprompt do
-  unless File.exists?("/usr/local/bin/vcprompt")
-    url = "https://raw.github.com/djl/vcprompt/master/bin/vcprompt"
-    filename = "/usr/local/bin/vcprompt"
-    download(url, filename) do
-      File::chmod 0001, "/usr/local/bin/vcprompt", "out"
-    end    
-  end
-end
-
-def download(url, filename, &block)
-  File.open(filename, "w+") do |f|
-    f.write open(download).read
-  end
-  yield if block_given?
-end
