@@ -12,7 +12,7 @@ end
 desc "Install vcprompt"
 task :vcprompt do
   unless File.exists?("/usr/local/bin/vcprompt")
-    download = "https://raw.github.com/djl/vcprompt/master/bin/vcprompt"
+    url = "https://raw.github.com/djl/vcprompt/master/bin/vcprompt"
     filename = "/usr/local/bin/vcprompt"
     download(url, filename) do
       File::chmod 0001, "/usr/local/bin/vcprompt", "out"
