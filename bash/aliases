@@ -51,3 +51,6 @@ function tcp { lsof -i tcp:$1; }
 function write {
   if [ ! -e $1 ]; then touch $1; fi; open -a "iA Writer" $1
 }
+
+# kill tomcat
+function kt { ps ax | grep java | grep "catalina" | awk '{print $1}' | xargs kill -9; }
