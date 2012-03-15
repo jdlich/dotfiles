@@ -23,7 +23,7 @@ alias gp='git push'
 alias gf='git difftool'
 
 # search
-alias f='find -x . -name'
+alias f='find -x * -name'
 
 # svn
 alias ss='svn status'
