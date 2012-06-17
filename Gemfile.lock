@@ -1,9 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    bond (0.4.1)
-    json (1.6.1)
-    ruby-mp3info (0.6.15)
+    bond (0.4.2)
+    json (1.7.3)
+    ruby-mp3info (0.7.1)
     wirble (0.1.3)
 
 PLATFORMS

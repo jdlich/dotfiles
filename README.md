@@ -5,16 +5,9 @@ After you fork this project, set the location of your dotfiles in `bashrc`:
 	# bashrc
 	export DOTFILES=~/Code/dotfiles
 
-Next thing is to have the following in `~/.bash_profile`:
-
-	# ~/.bash_profile
-    if [ -f ~/.bashrc ]; then
-       source ~/.bashrc
-    fi
-
 *(If your curious about the different bash files, read [this](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html))*
 	
-Finally, run the install script using `rake`:
+Run the install script using `rake`:
 
 	rake install
 	
