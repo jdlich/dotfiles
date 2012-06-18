@@ -23,8 +23,8 @@ export SSH_ENV="$HOME/.ssh/environment"
 
 # Ruby
 export RUBYOPT=rubygems
-export GEM_HOME='/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems'
 export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
+export GEM_HOME="/usr/local/Cellar/ruby/$RUBY_VERSION/lib/ruby/gems/1.9.1/gems"
 
 # Path
 export PATH="$GEM_HOME/bin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/Developer/Tools:$ANT_HOME/bin:$M2_HOME/bin:$DOTFILES/bin:$PATH"
