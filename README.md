@@ -19,4 +19,4 @@ Lastly, far greater dotfiles can be found elsewhere on GitHub: <https://github.c
 
 * Homebrew: https://github.com/mxcl/homebrew/wiki/installation
 * Ant: http://archive.apache.org/dist/ant/binaries/
-* Maven: http://maven.apache.org/download.html
+* Maven: http://archive.apache.org/dist/maven/binaries/
