@@ -9,15 +9,16 @@ export HISTCONTROL=erasedups
 export ANT_VERSION='1.8.2' # 1.7.1
 export ANT_HOME="/usr/local/bin/apache-ant-$ANT_VERSION"
 
-# Maven
-# 1. drop apache-maven-2.2.1 in /usr/local/bin
-# 2. sudo rm /usr/bin/mvn
-# 3. sudo ln -s /usr/local/bin/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
-
 # Java
 export JAVA_HOME="/Library/Java/Home"
 export CLASSPATH="/Library/Java/Extensions/pg73jdbc2ee.jar:."
 export JAVA_OPTS="-XX:MaxPermSize=2048m -Xms128m -Xmx2048m"
+
+# Maven
+# 1. drop apache-maven-2.2.1 in /usr/local/bin
+# 2. sudo rm /usr/bin/mvn
+# 3. sudo ln -s /usr/local/bin/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
+export MAVEN_OPTS="$JAVA_OPTS"
 
 # SSH
 export SSH_ENV="$HOME/.ssh/environment"
