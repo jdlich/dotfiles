@@ -6,7 +6,7 @@ export EDITOR="mate -w"
 export HISTCONTROL=erasedups
 
 # Ant
-export ANT_VERSION='1.8.2' # 1.7.1
+export ANT_VERSION='1.8.2' # 1.7.1 or 1.8.2
 export ANT_HOME="/usr/local/bin/apache-ant-$ANT_VERSION"
 
 # Java
@@ -15,9 +15,11 @@ export CLASSPATH="/Library/Java/Extensions/pg73jdbc2ee.jar:."
 export JAVA_OPTS="-XX:MaxPermSize=2048m -Xms128m -Xmx2048m"
 
 # Maven
-# 1. drop apache-maven-2.2.1 in /usr/local/bin
+# 1. drop apache-maven-VERSION in /usr/local/bin
 # 2. sudo rm /usr/bin/mvn
-# 3. sudo ln -s /usr/local/bin/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
+# 3. sudo ln -s /usr/local/bin/apache-maven-VERSION/bin/mvn /usr/bin/mvn
+export MAVEN_VERSION="3.0.3" # 2.2.1 or 3.0.3 then run #2-3 above
+export M2_HOME="/usr/local/bin/apache-maven-$MAVEN_VERSION"
 export MAVEN_OPTS="$JAVA_OPTS"
 
 # SSH
@@ -25,11 +27,17 @@ export SSH_ENV="$HOME/.ssh/environment"
 
 # Ruby
 export RUBYOPT=rubygems
-export RUBY_VERSION=`ruby -e 'print RUBY_VERSION+"-p"+RUBY_PATCHLEVEL.to_s'`
+export RUBY_VERSION="1.9.3-p194"
 export GEM_HOME="/usr/local/Cellar/ruby/$RUBY_VERSION/lib/ruby/gems/1.9.1/gems"
 
+# Postgres App
+export PSQL_APP="/Applications/Postgres.app/Contents/MacOS"
+
+# Node
+export NODE="/usr/local/share/npm"
+
 # Path
-export PATH="$GEM_HOME/bin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/bin:/Developer/Tools:$ANT_HOME/bin:$DOTFILES/bin:$PATH"
+export PATH="$PSQL_APP/bin:$GEM_HOME/bin:/usr/local/Cellar/ruby/$RUBY_VERSION/bin:/usr/local/bin:/Developer/Tools:$ANT_HOME/bin:$DOTFILES/bin:$NODE/bin:$PATH"
 
 # Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
