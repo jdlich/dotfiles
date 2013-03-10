@@ -54,3 +54,7 @@ function write {
 
 # kill tomcat
 function kt { ps ax | grep java | grep "catalina" | awk '{print $1}' | xargs kill -9; }
+
+# postgresql
+alias startpostgresql='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stoppostgresql='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
