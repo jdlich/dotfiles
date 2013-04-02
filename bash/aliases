@@ -59,5 +59,6 @@ function kt { ps ax | grep java | grep "catalina" | awk '{print $1}' | xargs kil
 alias startpostgresql='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppostgresql='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
-# open Font Awesome pastable.html in the browser
+# open various goodies in the browser
 alias fontawesome='open -a Google\ Chrome $HOME/Goodies/Icons/FontAwesome/pastable.html'
+alias fontgizmo='open -a Google\ Chrome $HOME/Goodies/Icons/ss-gizmo/documentation.html'
