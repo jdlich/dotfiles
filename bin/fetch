@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
 #
+# My crude attempt at a development package management system...
+#
+
+
 # TODO: Adding new tarfiles to fetch and repositories to checkout will eventually lead to a need for another level 
 # of abstraction. Currently, the specific shell commands are being abstracted ie 'unpack', etc, but that's not 
 # enough (and might be unneccesary). A better abstraction would be on resource type ie tarball, svn repo, regular 
@@ -68,11 +72,13 @@ class Fetch < Clamp::Command
   end
   
   # CAS
-  subcommand "cas", "Checkout CAS 3.x from source repo" do
-    def execute
-      svn "https://source.jasig.org/cas3/branches/cas-3_4_x_maintenance/cas-server-3.4.2/", :remove_svn => no_svn?
-    end
-  end
+  # subcommand "cas", "Checkout CAS" do
+  #   parameter("[VERSION]", "CAS version") { |s| s.to_i }
+  #   
+  #   def execute
+  #     v3dot5 = ""
+  #   end
+  # end
   
   # Sakai
   subcommand "sakai", "Checkout Sakai CLE" do
