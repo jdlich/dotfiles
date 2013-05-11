@@ -43,6 +43,7 @@ function ip { ifconfig en1 | ruby -ne '$_.match(/inet\s((\d|\.)+)/) { print $1 }
 
 # unpack tar file
 alias unpack='tar -xvzf'
+alias pack='tar -cvzf'
 
 # list out processes running on a specific port
 function tcp { lsof -i tcp:$1; }
