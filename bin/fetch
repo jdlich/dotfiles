@@ -56,13 +56,15 @@ class Fetch < Clamp::Command
   end
   
   # Tomcat
-  subcommand "tomcat", "Download and unpack tomcat 6" do
+  subcommand "tomcat", "Download and unpack tomcat" do
     parameter("[VERSION]", "tomcat version") { |s| s.to_i }
     
     def execute
-      v5  = "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
-      v6  = "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
-      url = (version == 5 ? v5 : v6)      
+      url = case version
+        when 5 then "http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20-original/bin/apache-tomcat-5.5.20.tar.gz"
+        when 6 then "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.29/bin/apache-tomcat-6.0.29.tar.gz"
+        when 7 then "http://www.motorlogy.com/apache/tomcat/tomcat-7/v7.0.42/bin/apache-tomcat-7.0.42.tar.gz"
+      end
       tar = url.split("/").last
       
       download url
