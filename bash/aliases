@@ -63,3 +63,4 @@ alias stoppostgresql='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 # open various goodies in the browser
 alias fontawesome='open -a Google\ Chrome $HOME/Goodies/Icons/FontAwesome/pastable.html'
 alias fontgizmo='open -a Google\ Chrome $HOME/Goodies/Icons/ss-gizmo/documentation.html'
+
