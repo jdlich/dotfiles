@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+#
+#   ruby httpd via rack
+#
+#   Serves up the current directory at localhost:8080. Uses rack and thin.
+#
+
+require 'rack'
+
+include Rack
+
+app = Builder.new do
+  use Static,
+        :urls => Dir["./*"].map { |fn| fn.gsub('.', '')},
+        :root => '.',
+        :index => 'index.html'
+  run lambda { |env| [404, {'Content-Type' => 'text/html', 'Content-Length' => '9'}, ['Not Found']] }
+  run Directory.new(Dir.pwd)
+end
+
+Handler::Thin.run(app)
+
