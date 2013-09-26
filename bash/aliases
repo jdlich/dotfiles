@@ -65,4 +65,7 @@ alias fontawesome='open -a Google\ Chrome $HOME/Goodies/Icons/FontAwesome/pastab
 alias fontgizmo='open -a Google\ Chrome $HOME/Goodies/Icons/ss-gizmo/documentation.html'
 
 # python simple http server
-alias http='python -m SimpleHTTPServer 8887'
+function httpd { 
+  port=$([ -z "$1" ] && echo 9393 || echo $1) # default port to 9393
+  ruby -run -e httpd . -p $port
+}
