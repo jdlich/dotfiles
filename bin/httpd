@@ -14,10 +14,13 @@ app = Builder.new do
   use Static,
         :urls => Dir["./*"].map { |fn| fn.gsub('.', '')},
         :root => '.',
-        :index => 'index.html'
+        :index => 'index.html',
+        :header_rules => [[:all, {'Cache-Control' => "private, no-cache"}]]
   run lambda { |env| [404, {'Content-Type' => 'text/html', 'Content-Length' => '9'}, ['Not Found']] }
   run Directory.new(Dir.pwd)
 end
 
 Handler::Thin.run(app)
+
+# Cache-Control "public, max-age=604800, must-revalidate"
 
