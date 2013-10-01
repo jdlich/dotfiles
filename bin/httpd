@@ -21,6 +21,3 @@ app = Builder.new do
 end
 
 Handler::Thin.run(app)
-
-# Cache-Control "public, max-age=604800, must-revalidate"
-
