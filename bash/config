@@ -43,3 +43,7 @@ export PATH="$PSQL_APP/bin:$GEM_HOME/bin:/usr/local/Cellar/ruby/$RUBY_VERSION/bi
 
 # Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
 export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
+
+# rbenv
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
