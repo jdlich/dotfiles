@@ -40,7 +40,7 @@ export NODE="/usr/local/share/npm"
 export PATH="$PSQL_APP/bin:/usr/local/bin:/Developer/Tools:$ANT_HOME/bin:$DOTFILES/bin:$NODE/bin:$PATH"
 
 # Prompt ( vcprompt: http://vc.gerg.ca/hg/vcprompt )
-export PS1="\[\033[1;37m\]\w\$(vcprompt) $ \[\033[0m\]"
+export PS1="\[\033[1;37m\]\w\$(vcprompt)$ \[\033[0m\]"
 
 # rbenv
 # 1. brew install rbenv ruby-build
