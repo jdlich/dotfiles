@@ -65,4 +65,4 @@ alias fontawesome='open -a Google\ Chrome $HOME/Goodies/Icons/FontAwesome/pastab
 alias fontgizmo='open -a Google\ Chrome $HOME/Goodies/Icons/ss-gizmo/documentation.html'
 
 # open Chrome for ajax
-alias openchrome='open -a "Google Chrome" --args --allow-file-access-from-files'
+alias chrome='open -a "Google Chrome" --args --allow-file-access-from-files'
