@@ -26,9 +26,9 @@ alias gf='git difftool'
 alias f='find -x * -name'
 
 # svn
-# alias ss='svn status'
-# function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
-# function sf { svn diff --diff-cmd=ksdiff-svnwrapper $@; }
+alias ss='svn status'
+alias sf='svn diff'
+function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
 
 # site and project completions
 function c { cd ~/Code/$1; }
