@@ -3,7 +3,7 @@
 require 'rmagick'
 require 'clamp'
 
-if ARGV.length > 1 and ARGV.first.include?('.pdf')
+if ARGV.length > 1 and ARGV.first.match /\.pdf$/
   pdf = ARGV.first
   files = ARGV[1..-1]
   list = Magick::ImageList.new
