@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'rmagick'
+require 'clamp'
+
+if ARGV.length > 1 and ARGV.first.include?('.pdf')
+  pdf = ARGV.first
+  files = ARGV[1..-1]
+  list = Magick::ImageList.new
+  files.each do |f|
+    begin
+      list.read(f)
+    rescue
+      puts "No such file or directory found for \"#{f}\""
+      exit
+    end
+  end
+  list.write(pdf)
+else
+  puts "Usage: multi-pdf EXAMPLE.PDF [FILES]"
+end
