@@ -28,7 +28,10 @@ alias f='find -x * -name'
 # svn
 alias ss='svn status'
 alias sf='svn diff'
-function sd { svn status | ruby -ne '$_.match(/^!\s+(.+)\n/) { puts $1 }' | xargs svn rm; }
+function svn-flag { svn status | grep ^$1 | awk '{print $2}'; }
+function sd { svn rm `svn-flag !`; }
+function sa { svn add `svn-flag ?`; }
+alias svn-open='svn info | grep --regex "^URL" | ruby -e "puts gets.split(\" \").last" | xargs open -a Google\ Chrome'
 
 # site and project completions
 function c { cd ~/Code/$1; }
