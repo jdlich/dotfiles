@@ -21,6 +21,9 @@ alias gc='git commit'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
 alias gf='git difftool'
+function git-revert-delete {
+	git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"
+}
 
 # search
 alias f='find -x * -name'
