@@ -11,9 +11,9 @@ Run the install script using `rake`:
 
 	rake install
 	
-## dotfiles on Github
+## More dotfiles on Github
 
-Lastly, far greater dotfiles can be found elsewhere on GitHub: <https://github.com/search?q=dotfiles&type=Repositories>
+There are more and [far greater dotfiles](https://github.com/gf3/dotfiles) out there to get ideas from.
 
 ## Links
 
