@@ -3,7 +3,44 @@
     {
       "dev": [
         {
+          "entities": "http://dev.w3.org/html5/html-author/charref",
+					"css-arrow": "http://cssarrowplease.com/",
+					"svn": "http://bit.ly/1ikAzSw"
+        }
+      ]
+    }
+  ]
+}
+
+{
+  "lists": [
+    {
+      "dev": [
+        {
           "entities": "http://dev.w3.org/html5/html-author/charref"
+        },
+        {
+          "css-arrow": "http://cssarrowplease.com/"
+        },
+        {
+          "svn": "http://bit.ly/1ikAzSw"
+        },
+        {
+          "emailregex": "http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#valid-e-mail-address"
+        }
+      ]
+    },
+    {
+      "gif": [
+        {
+          "idontknow": "http://graphics8.nytimes.com/images/2013/04/26/opinion/draft-kreider/draft-kreider-blog427.jpg"
+        }
+      ]
+    },
+    {
+      "css": [
+        {
+          "ie10": "http://msdn.microsoft.com/en-us/library/hh781508(v=vs.85).aspx"
         }
       ]
     }
