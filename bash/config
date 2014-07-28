@@ -31,7 +31,7 @@ export SSH_ENV="$HOME/.ssh/environment"
 export RUBYOPT=rubygems
 
 # Postgres App
-export PSQL_APP="/Applications/Postgres.app/Contents/MacOS"
+export PSQL_APP="/Applications/Postgres.app/Contents/Versions/9.3"
 
 # Node
 export NODE="/usr/local/share/npm"
