@@ -17,6 +17,9 @@ function cdl { cd $1 && ls; }
 alias gs='git status'
 alias ga='git add .'
 alias gd='git ls-files --deleted | xargs git rm'
+# function gd {
+#   git ls-files --deleted | ruby -e 'puts gets.gsub(/(.+)/) { "\"#{$1}\"" }' | xargs git rm
+# }
 alias gc='git commit'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
