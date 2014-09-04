@@ -1,0 +1,13 @@
+[push]
+	default = simple
+[user]
+	name = Jacob Lichner
+	email = jacob.d.lichner@gmail.com
+[apply]
+	whitespace = fix
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
