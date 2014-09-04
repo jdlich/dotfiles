@@ -1,1 +1,17 @@
 excludeInFolderSearch = "{$excludeInFolderSearch,$extraExcludes,log,tmp}"
+
+lineEndings = '\n'
+tabSize = 2
+softTabs = true
+
+[ "{Capfile,Gemfile,Gemfile.lock,Guardfile}"]
+fileType = source.ruby
+
+[ "*js.liquid" ]
+fileType = source.js
+
+[ "*scss.liquid" ]
+fileType = source.scss
+
+[ "*css.liquid" ]
+fileType = source.css
