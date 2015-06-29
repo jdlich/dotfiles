@@ -1,0 +1,27 @@
+# Fix whitespace in the index while preserving a dirty tree, if
+# any.
+#
+# Assuming your index is empty, some useful variations are: 
+#
+# - fix whitespace in all changes in all versioned files:
+#
+#     git add -u :/ && git fixws && git reset
+#
+# - fix whitespace in all unversioned files and in all changes in
+#   all versioned files:
+#
+#     git add --all :/ && git fixws && git reset
+if [ ! -e ".git" ]; then
+	echo "Not a git repository."
+	exit 0
+fi
+
+if (! git diff-index --quiet --cached HEAD); then
+  git diff-files --quiet . ; 
+  export NEED_TO_STASH=$? ;
+  git commit -m FIXWS_SAVE_INDEX &&
+  if [ 1 = $NEED_TO_STASH ] ; then git stash save FIXWS_SAVE_TREE; fi &&
+  git rebase --whitespace=fix HEAD~ &&
+  git reset --soft HEAD~ &&
+  if [ 1 = $NEED_TO_STASH ] ; then git stash pop; fi ;
+fi
