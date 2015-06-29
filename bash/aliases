@@ -17,27 +17,19 @@ function cdl { cd $1 && ls; }
 alias gs='git status'
 alias ga='git add .'
 alias gd='git ls-files --deleted | xargs git rm'
-# function gd {
-#   git ls-files --deleted | ruby -e 'puts gets.gsub(/(.+)/) { "\"#{$1}\"" }' | xargs git rm
-# }
 alias gc='git commit'
 alias gl='git log --pretty="%H %s"'
 alias gp='git push'
 alias gf='git difftool'
+function gd {
+  git ls-files --deleted | ruby -e 'puts gets.gsub(/(.+)/) { "\"#{$1}\"" }' | xargs git rm
+}
 function git-revert-delete {
-	git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"
+  git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"
 }
 
 # search
 alias f='find -x * -name'
-
-# svn
-alias ss='svn status'
-alias sf='svn diff'
-function svn-flag { svn status | grep ^$1 | awk '{print $2}'; }
-function sd { svn rm `svn-flag !`; }
-function sa { svn add `svn-flag ?`; }
-alias svn-open='svn info | grep --regex "^URL" | ruby -e "puts gets.split(\" \").last" | xargs open -a Google\ Chrome'
 
 # site and project completions
 function c { cd ~/Code/$1; }
