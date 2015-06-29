@@ -67,3 +67,6 @@ alias fontgizmo='open -a Google\ Chrome $HOME/Goodies/Icons/ss-gizmo/documentati
 
 # open Chrome for ajax
 alias chrome='open -a "Google Chrome" --args --allow-file-access-from-files'
+
+# remove exec from all files in current directory
+alias remove-exec='find . -type f -exec chmod -x {} \;'
