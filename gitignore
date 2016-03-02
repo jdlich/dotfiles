@@ -1,2 +1,5 @@
 .DS_Store
 *.swp
+config.yml
+.rake_cache
+.sass_cache
