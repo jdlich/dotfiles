@@ -4,10 +4,6 @@ def dotfiles
   Dir.entries('.').select { |f| File.file?(f) } - %w[. .. .git .gitignore Rakefile README.md Gemfile Gemfile.lock]
 end
 
-task :default do
-  puts dotfiles
-end
-
 desc "Copy dotfiles to $HOME"
 task :install do
   dotfiles.each do |file|
