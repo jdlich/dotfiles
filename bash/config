@@ -29,6 +29,7 @@ export SSH_ENV="$HOME/.ssh/environment"
 
 # Ruby
 export RUBYOPT=rubygems
+export RUBYLIB="$DOTFILES/lib"
 
 # Postgres App
 export PSQL_APP="/Applications/Postgres.app/Contents/Versions/9.3"
