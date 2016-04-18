@@ -4,14 +4,14 @@ lineEndings = '\n'
 tabSize = 2
 softTabs = true
 
-[ "{Capfile,Gemfile,Gemfile.lock,Guardfile}"]
+[ "{Capfile,Gemfile,Gemfile.lock,Guardfile,Rakefile}"]
 fileType = source.ruby
 
-[ "*js.liquid" ]
+[ "*.js.liquid" ]
 fileType = source.js
 
-[ "*scss.liquid" ]
+[ "*.scss.liquid" ]
 fileType = source.scss
 
-[ "*css.liquid" ]
+[ "*.css.liquid" ]
 fileType = source.css
