@@ -27,6 +27,9 @@ function gd {
 function git-revert-delete {
   git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"
 }
+function git-diff-name {
+  git diff --name-only HEAD~$1 HEAD
+}
 
 # search
 alias f='find -x * -name'
