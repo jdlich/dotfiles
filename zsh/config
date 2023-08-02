@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# Change default text editor to TextMate
+export EDITOR="mate -w"
+
+# When adding items to history, remove duplicates upstream
+export HISTCONTROL=erasedups
+export HISTSIZE=3000
+
+# SSH
+export SSH_ENV="$HOME/.ssh/environment"
+
+# Ruby
+export RUBYOPT=rubygems
+export RUBYLIB="$DOTFILES/lib"
+
+# Node
+export NODE="/usr/local/share/npm"
+
+# Path
+export PATH="/usr/local/bin:/Developer/Tools:$DOTFILES/bin:$NODE/bin:$PATH"
+
+# function to return current branch name while suppressing errors.
+function git_branch() {
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  
+  if [[ $branch == "" ]]; then
+    :
+  else
+    echo '['$branch']'
+  fi
+}
+
+setopt prompt_subst # allow command substitution inside the prompt
+export PROMPT='%B%~$(git_branch) $%b ' # set the prompt value
+
+# rbenv
+# 1. brew install rbenv ruby-build
+# 2. Get ruby versions:
+#    ruby-build --definitions
+# 3. Install ruby version:
+#    rbenv install RUBY_VERSION
+# export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

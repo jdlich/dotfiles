@@ -1,6 +1,6 @@
 ## Getting Started With Your Own dotfiles
 
-After you fork this project, set the location of your dotfiles in `bashrc`:
+After you fork this project, set the location of your dotfiles in `zshrc`:
 
 	# bashrc
 	export DOTFILES=~/Code/dotfiles
@@ -10,7 +10,7 @@ After you fork this project, set the location of your dotfiles in `bashrc`:
 Run the install script using `rake`:
 
 	rake install
-	
+  
 ## More dotfiles on Github
 
 There are more and [far greater dotfiles](https://github.com/gf3/dotfiles) out there to get ideas from.

@@ -1,0 +1,5 @@
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+
+complete -C $DOTFILES/zsh/completions/rake_tasks -o default rake
+complete -C $DOTFILES/zsh/completions/projects -o default c

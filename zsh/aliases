@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # source
 alias reload='source ~/.bashrc'
@@ -34,9 +35,8 @@ function git-diff-name {
 # search
 alias f='find -x * -name'
 
-# site and project completions
+# project completions
 function c { cd ~/Code/$1; }
-function s { cd ~/Sites/$1; }
 
 # copy working directory & filename
 alias cwd='echo -n `pwd` | pbcopy'
