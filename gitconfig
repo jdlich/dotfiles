@@ -15,3 +15,5 @@
 ws = "!git rebase --whitespace=fix --onto $(git merge-base HEAD @{u})"
 [credential]
   helper = osxkeychain
+[init]
+  defaultBranch = main
