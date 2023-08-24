@@ -1,16 +1,19 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
-    bond (0.4.2)
-    json (1.7.3)
-    ruby-mp3info (0.7.1)
+    bond (0.5.1)
+    json (2.6.3)
+    ruby-mp3info (0.8.10)
     wirble (0.1.3)
 
 PLATFORMS
-  ruby
+  arm64-darwin-22
 
 DEPENDENCIES
   bond
   json
   ruby-mp3info
   wirble
+
+BUNDLED WITH
+   2.4.18
