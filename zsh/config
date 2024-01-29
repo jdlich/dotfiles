@@ -14,16 +14,13 @@ export SSH_ENV="$HOME/.ssh/environment"
 export RUBYOPT=rubygems
 export RUBYLIB="$DOTFILES/lib"
 
-# Node
-export NODE="/usr/local/share/npm"
-
 # Path
 export PATH="/usr/local/bin:/Developer/Tools:$DOTFILES/bin:$NODE/bin:$PATH"
 
 # function to return current branch name while suppressing errors.
 function git_branch() {
   branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  
+
   if [[ $branch == "" ]]; then
     :
   else
