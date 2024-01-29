@@ -7,9 +7,6 @@ export EDITOR="mate -w"
 export HISTCONTROL=erasedups
 export HISTSIZE=3000
 
-# SSH
-export SSH_ENV="$HOME/.ssh/environment"
-
 # Ruby
 export RUBYOPT=rubygems
 export RUBYLIB="$DOTFILES/lib"
