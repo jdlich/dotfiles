@@ -11,6 +11,10 @@ export HISTSIZE=3000
 export RUBYOPT=rubygems
 export RUBYLIB="$DOTFILES/lib"
 
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.0
+
 # Path
 export PATH="/usr/local/bin:/Developer/Tools:$DOTFILES/bin:$PATH"
 
