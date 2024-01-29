@@ -19,7 +19,7 @@ alias gs='git status'
 alias ga='git add .'
 alias gd='git ls-files --deleted | xargs git rm'
 alias gc='git commit'
-alias gl='git log --pretty="%H %s"'
+alias gl='git log --pretty="%h %s"'
 alias gp='git push'
 alias gf='git difftool'
 function gd {
