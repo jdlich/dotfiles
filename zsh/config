@@ -27,7 +27,3 @@ function git_branch() {
 
 setopt prompt_subst # allow command substitution inside the prompt
 export PROMPT='%B%~$(git_branch) $%b ' # set the prompt value
-
-# Shopify
-# Needed due to a RubyGems error with the shopify-cli when pulling themes
-# export SHOPIFY_CLI_BUNDLED_THEME_CLI=1
