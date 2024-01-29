@@ -42,7 +42,7 @@ export PROMPT='%B%~$(git_branch) $%b ' # set the prompt value
 #    rbenv install RUBY_VERSION
 # export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-  
+
 # Shopify
 # Needed due to a RubyGems error with the shopify-cli when pulling themes
-export SHOPIFY_CLI_BUNDLED_THEME_CLI=1
+# export SHOPIFY_CLI_BUNDLED_THEME_CLI=1
