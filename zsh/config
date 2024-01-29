@@ -12,7 +12,7 @@ export RUBYOPT=rubygems
 export RUBYLIB="$DOTFILES/lib"
 
 # Path
-export PATH="/usr/local/bin:/Developer/Tools:$DOTFILES/bin:$NODE/bin:$PATH"
+export PATH="/usr/local/bin:/Developer/Tools:$DOTFILES/bin:$PATH"
 
 # function to return current branch name while suppressing errors.
 function git_branch() {
